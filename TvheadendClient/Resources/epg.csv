@@ -1,0 +1,257 @@
+﻿LEVEL_1;LEVEL_2;LEVEL_1_EN_us;LEVEL_2_EN_us;LEVEL_1_CS_cz;LEVEL_2_CS_cz
+0x0;0x0;Undefined;undefined content;Nedefinovaný;
+0x0;0x1;Undefined;undefined content;Nedefinovaný;
+0x0;0x2;Undefined;undefined content;Nedefinovaný;
+0x0;0x3;Undefined;undefined content;Nedefinovaný;
+0x0;0x4;Undefined;undefined content;Nedefinovaný;
+0x0;0x5;Undefined;undefined content;Nedefinovaný;
+0x0;0x6;Undefined;undefined content;Nedefinovaný;
+0x0;0x7;Undefined;undefined content;Nedefinovaný;
+0x0;0x8;Undefined;undefined content;Nedefinovaný;
+0x0;0x9;Undefined;undefined content;Nedefinovaný;
+0x0;0xA;Undefined;undefined content;Nedefinovaný;
+0x0;0xB;Undefined;undefined content;Nedefinovaný;
+0x0;0xC;Undefined;undefined content;Nedefinovaný;
+0x0;0xD;Undefined;undefined content;Nedefinovaný;
+0x0;0xE;Undefined;undefined content;Nedefinovaný;
+0x0;0xF;Undefined;undefined content;Nedefinovaný;
+0x1;0x0;Movie/Drama;movie/drama (general);Film / Drama;film / drama (obecně)
+0x1;0x1;Movie/Drama;detective/thriller;Film / Drama;detektivka / thriller
+0x1;0x2;Movie/Drama;adventure/western/war;Film / Drama;dobrodružství / western / válka
+0x1;0x3;Movie/Drama;science fiction/fantasy/horror;Film / Drama;science fiction / fantasy / horor
+0x1;0x4;Movie/Drama;comedy;Film / Drama;komedie
+0x1;0x5;Movie/Drama;soap/melodrama/folkloric;Film / Drama;telenovela / melodrama / folklór
+0x1;0x6;Movie/Drama;romance;Film / Drama;romance
+0x1;0x7;Movie/Drama;serious/classical/religious/historical movie/drama;Film / Drama;vážný / klasický / náboženský / historický film / drama
+0x1;0x8;Movie/Drama;adult movie/drama;Film / Drama;film pro dospělé / drama
+0x1;0x9;Movie/Drama;;Film / Drama;
+0x1;0xA;Movie/Drama;;Film / Drama;
+0x1;0xB;Movie/Drama;;Film / Drama;
+0x1;0xC;Movie/Drama;;Film / Drama;
+0x1;0xD;Movie/Drama;;Film / Drama;
+0x1;0xE;Movie/Drama;;Film / Drama;
+0x1;0xF;Movie/Drama;;Film / Drama;
+0x2;0x0;News/Current affairs;news/current affairs (general);Zprávy / Aktuální události;zprávy / aktuální události
+0x2;0x1;News/Current affairs;news/weather report;Zprávy / Aktuální události;zprávy / předpověď počasí
+0x2;0x2;News/Current affairs;news magazine;Zprávy / Aktuální události;zpravodajský magazín
+0x2;0x3;News/Current affairs;documentary;Zprávy / Aktuální události;dokuemnt
+0x2;0x4;News/Current affairs;discussion/interview/debate;Zprávy / Aktuální události;diskuze / rozhovor / debata
+0x2;0x5;News/Current affairs;;Zprávy / Aktuální události;
+0x2;0x6;News/Current affairs;;Zprávy / Aktuální události;
+0x2;0x7;News/Current affairs;;Zprávy / Aktuální události;
+0x2;0x8;News/Current affairs;;Zprávy / Aktuální události;
+0x2;0x9;News/Current affairs;;Zprávy / Aktuální události;
+0x2;0xA;News/Current affairs;;Zprávy / Aktuální události;
+0x2;0xB;News/Current affairs;;Zprávy / Aktuální události;
+0x2;0xC;News/Current affairs;;Zprávy / Aktuální události;
+0x2;0xD;News/Current affairs;;Zprávy / Aktuální události;
+0x2;0xE;News/Current affairs;;Zprávy / Aktuální události;
+0x2;0xF;News/Current affairs;;Zprávy / Aktuální události;
+0x3;0x0;Show/Game show:;show/game show (general);Show / Herní show;show / herní show
+0x3;0x1;Show/Game show:;game show/quiz/contest;Show / Herní show;herní show / kvíz / soutěž
+0x3;0x2;Show/Game show:;variety show;Show / Herní show;různá show
+0x3;0x3;Show/Game show:;talk show;Show / Herní show;talk show
+0x3;0x4;Show/Game show:;;Show / Herní show;
+0x3;0x5;Show/Game show:;;Show / Herní show;
+0x3;0x6;Show/Game show:;;Show / Herní show;
+0x3;0x7;Show/Game show:;;Show / Herní show;
+0x3;0x8;Show/Game show:;;Show / Herní show;
+0x3;0x9;Show/Game show:;;Show / Herní show;
+0x3;0xA;Show/Game show:;;Show / Herní show;
+0x3;0xB;Show/Game show:;;Show / Herní show;
+0x3;0xC;Show/Game show:;;Show / Herní show;
+0x3;0xD;Show/Game show:;;Show / Herní show;
+0x3;0xE;Show/Game show:;;Show / Herní show;
+0x3;0xF;Show/Game show:;;Show / Herní show;
+0x4;0x0;Sports;sports (general);Sport;sport
+0x4;0x1;Sports;special events (Olympic Games, World Cup, etc.);Sport;speciální událost
+0x4;0x2;Sports;sports magazines;Sport;sportovní magazín
+0x4;0x3;Sports;football/soccer;Sport;fotbal
+0x4;0x4;Sports;tennis/squash;Sport;tenis
+0x4;0x5;Sports;team sports (excluding football);Sport;týmové sporty
+0x4;0x6;Sports;athletics;Sport;atletika
+0x4;0x7;Sports;motor sport;Sport;motoristické sporty
+0x4;0x8;Sports;water sport;Sport;vodní sporty
+0x4;0x9;Sports;winter sports;Sport;zimní sporty
+0x4;0xA;Sports;equestrian;Sport;jezdeské sporty
+0x4;0xB;Sports;martial sports;Sport;bojové sporty
+0x4;0xC;Sports;;Sport;
+0x4;0xD;Sports;;Sport;
+0x4;0xE;Sports;;Sport;
+0x4;0xF;Sports;;Sport;
+0x5;0x0;Children's/Youth programmes;children's/youth programmes (general);Dětské / Programy pro mladé;dětské / programy pro mladé
+0x5;0x1;Children's/Youth programmes;pre-school children's programmes;Dětské / Programy pro mladé;předškolní děti
+0x5;0x2;Children's/Youth programmes;entertainment programmes for 6 to14;Dětské / Programy pro mladé;děti od 6 do 14
+0x5;0x3;Children's/Youth programmes;entertainment programmes for 10 to 16;Dětské / Programy pro mladé;děti od 10 do 16
+0x5;0x4;Children's/Youth programmes;informational/educational/school programmes;Dětské / Programy pro mladé;informační / vzdělávací
+0x5;0x5;Children's/Youth programmes;cartoons/puppets;Dětské / Programy pro mladé;animované / loutkové
+0x5;0x6;Children's/Youth programmes;;Dětské / Programy pro mladé;
+0x5;0x7;Children's/Youth programmes;;Dětské / Programy pro mladé;
+0x5;0x8;Children's/Youth programmes;;Dětské / Programy pro mladé;
+0x5;0x9;Children's/Youth programmes;;Dětské / Programy pro mladé;
+0x5;0xA;Children's/Youth programmes;;Dětské / Programy pro mladé;
+0x5;0xB;Children's/Youth programmes;;Dětské / Programy pro mladé;
+0x5;0xC;Children's/Youth programmes;;Dětské / Programy pro mladé;
+0x5;0xD;Children's/Youth programmes;;Dětské / Programy pro mladé;
+0x5;0xE;Children's/Youth programmes;;Dětské / Programy pro mladé;
+0x5;0xF;Children's/Youth programmes;;Dětské / Programy pro mladé;
+0x6;0x0;Music/Ballet/Dance;music/ballet/dance (general);Hudba / Balet / Tanec;hudba / balet /tanes
+0x6;0x1;Music/Ballet/Dance;rock/pop;Hudba / Balet / Tanec;rock / pop
+0x6;0x2;Music/Ballet/Dance;serious music/classical music;Hudba / Balet / Tanec;vážná hudba / klasická hudba
+0x6;0x3;Music/Ballet/Dance;folk/traditional music;Hudba / Balet / Tanec;folk / lidová hudba
+0x6;0x4;Music/Ballet/Dance;jazz;Hudba / Balet / Tanec;jazz
+0x6;0x5;Music/Ballet/Dance;musical/opera;Hudba / Balet / Tanec;muzikál opera
+0x6;0x6;Music/Ballet/Dance;ballet;Hudba / Balet / Tanec;balet
+0x6;0x7;Music/Ballet/Dance;;Hudba / Balet / Tanec;
+0x6;0x8;Music/Ballet/Dance;;Hudba / Balet / Tanec;
+0x6;0x9;Music/Ballet/Dance;;Hudba / Balet / Tanec;
+0x6;0xA;Music/Ballet/Dance;;Hudba / Balet / Tanec;
+0x6;0xB;Music/Ballet/Dance;;Hudba / Balet / Tanec;
+0x6;0xC;Music/Ballet/Dance;;Hudba / Balet / Tanec;
+0x6;0xD;Music/Ballet/Dance;;Hudba / Balet / Tanec;
+0x6;0xE;Music/Ballet/Dance;;Hudba / Balet / Tanec;
+0x6;0xF;Music/Ballet/Dance;;Hudba / Balet / Tanec;
+0x7;0x0;Arts/Culture (without music);arts/culture (without music, general);Umění / Kultura (bez hudby);umění / kultura
+0x7;0x1;Arts/Culture (without music);performing arts;Umění / Kultura (bez hudby);činohra
+0x7;0x2;Arts/Culture (without music);fine arts;Umění / Kultura (bez hudby);výtvarné umění
+0x7;0x3;Arts/Culture (without music);religion;Umění / Kultura (bez hudby);náboženskví
+0x7;0x4;Arts/Culture (without music);popular culture/traditional arts;Umění / Kultura (bez hudby);populární kultura / tradiční umění
+0x7;0x5;Arts/Culture (without music);literature;Umění / Kultura (bez hudby);literatura
+0x7;0x6;Arts/Culture (without music);film/cinema;Umění / Kultura (bez hudby);film / kino
+0x7;0x7;Arts/Culture (without music);experimental film/video;Umění / Kultura (bez hudby);experimentální film / video
+0x7;0x8;Arts/Culture (without music);broadcasting/press;Umění / Kultura (bez hudby);vysílání / tisk
+0x7;0x9;Arts/Culture (without music);new media;Umění / Kultura (bez hudby);nová média
+0x7;0xA;Arts/Culture (without music);arts/culture magazines;Umění / Kultura (bez hudby);umělecké / kulturní časopisy
+0x7;0xB;Arts/Culture (without music);fashion;Umění / Kultura (bez hudby);móda
+0x7;0xC;Arts/Culture (without music);;Umění / Kultura (bez hudby);
+0x7;0xD;Arts/Culture (without music);;Umění / Kultura (bez hudby);
+0x7;0xE;Arts/Culture (without music);;Umění / Kultura (bez hudby);
+0x7;0xF;Arts/Culture (without music);;Umění / Kultura (bez hudby);
+0x8;0x0;Social/Political issues/Economics;social/political issues/economics (general);Sociální / Politické problémy / Ekonomika;sociální / politické problémy / ekonomika
+0x8;0x1;Social/Political issues/Economics;magazines/reports/documentary;Sociální / Politické problémy / Ekonomika;magazíny / zprávy / dokumentární
+0x8;0x2;Social/Political issues/Economics;economics/social advisory;Sociální / Politické problémy / Ekonomika;ekonomika / sociální poradenství
+0x8;0x3;Social/Political issues/Economics;remarkable people;Sociální / Politické problémy / Ekonomika;pozoruhodní lidé
+0x8;0x4;Social/Political issues/Economics;;Sociální / Politické problémy / Ekonomika;
+0x8;0x5;Social/Political issues/Economics;;Sociální / Politické problémy / Ekonomika;
+0x8;0x6;Social/Political issues/Economics;;Sociální / Politické problémy / Ekonomika;
+0x8;0x7;Social/Political issues/Economics;;Sociální / Politické problémy / Ekonomika;
+0x8;0x8;Social/Political issues/Economics;;Sociální / Politické problémy / Ekonomika;
+0x8;0x9;Social/Political issues/Economics;;Sociální / Politické problémy / Ekonomika;
+0x8;0xA;Social/Political issues/Economics;;Sociální / Politické problémy / Ekonomika;
+0x8;0xB;Social/Political issues/Economics;;Sociální / Politické problémy / Ekonomika;
+0x8;0xC;Social/Political issues/Economics;;Sociální / Politické problémy / Ekonomika;
+0x8;0xD;Social/Political issues/Economics;;Sociální / Politické problémy / Ekonomika;
+0x8;0xE;Social/Political issues/Economics;;Sociální / Politické problémy / Ekonomika;
+0x8;0xF;Social/Political issues/Economics;;Sociální / Politické problémy / Ekonomika;
+0x9;0x0;Education/Science/Factual topics;education/science/factual topics (general);Vzdělání / Věda / Fakta;vzdělání / věda / fakta
+0x9;0x1;Education/Science/Factual topics;nature/animals/environment;Vzdělání / Věda / Fakta;příroda / zvířata životní prostředí
+0x9;0x2;Education/Science/Factual topics;technology/natural sciences;Vzdělání / Věda / Fakta;technologie / přírodní vědy
+0x9;0x3;Education/Science/Factual topics;medicine/physiology/psychology;Vzdělání / Věda / Fakta;medicína / fyziologie / psychologie
+0x9;0x4;Education/Science/Factual topics;foreign countries/expeditions;Vzdělání / Věda / Fakta;cizí země / expedice
+0x9;0x5;Education/Science/Factual topics;social/spiritual sciences;Vzdělání / Věda / Fakta;sociální / náboženské vědy
+0x9;0x6;Education/Science/Factual topics;further education;Vzdělání / Věda / Fakta;další zvdělávání
+0x9;0x7;Education/Science/Factual topics;languages;Vzdělání / Věda / Fakta;jazyky
+0x9;0x8;Education/Science/Factual topics;;Vzdělání / Věda / Fakta;
+0x9;0x9;Education/Science/Factual topics;;Vzdělání / Věda / Fakta;
+0x9;0xA;Education/Science/Factual topics;;Vzdělání / Věda / Fakta;
+0x9;0xB;Education/Science/Factual topics;;Vzdělání / Věda / Fakta;
+0x9;0xC;Education/Science/Factual topics;;Vzdělání / Věda / Fakta;
+0x9;0xD;Education/Science/Factual topics;;Vzdělání / Věda / Fakta;
+0x9;0xE;Education/Science/Factual topics;;Vzdělání / Věda / Fakta;
+0x9;0xF;Education/Science/Factual topics;;Vzdělání / Věda / Fakta;
+0xA;0x0;Leisure hobbies;leisure hobbies (general);Volný čas / Koníčky;volný čas / voníčky
+0xA;0x1;Leisure hobbies;tourism/travel;Volný čas / Koníčky;turismus / cestování
+0xA;0x2;Leisure hobbies;handicraft;Volný čas / Koníčky;ruční práce
+0xA;0x3;Leisure hobbies;motoring;Volný čas / Koníčky;motorismus
+0xA;0x4;Leisure hobbies;fitness and health;Volný čas / Koníčky;fitnes a zdraví
+0xA;0x5;Leisure hobbies;cooking;Volný čas / Koníčky;vaření
+0xA;0x6;Leisure hobbies;advertisement/shopping;Volný čas / Koníčky;reklamy / nakupování
+0xA;0x7;Leisure hobbies;gardening;Volný čas / Koníčky;zahradničení
+0xA;0x8;Leisure hobbies;;Volný čas / Koníčky;
+0xA;0x9;Leisure hobbies;;Volný čas / Koníčky;
+0xA;0xA;Leisure hobbies;;Volný čas / Koníčky;
+0xA;0xB;Leisure hobbies;;Volný čas / Koníčky;
+0xA;0xC;Leisure hobbies;;Volný čas / Koníčky;
+0xA;0xD;Leisure hobbies;;Volný čas / Koníčky;
+0xA;0xE;Leisure hobbies;;Volný čas / Koníčky;
+0xA;0xF;Leisure hobbies;;Volný čas / Koníčky;
+0xB;0x0;Special characteristics;original language;Speciální;původní jazyky
+0xB;0x1;Special characteristics;black and white;Speciální;černá a bílá
+0xB;0x2;Special characteristics;unpublished;Speciální;nepublikované
+0xB;0x3;Special characteristics;live broadcast;Speciální;živé vysílání
+0xB;0x4;Special characteristics;plano-stereoscopic;Speciální;trojrozměrné
+0xB;0x5;Special characteristics;local or regional;Speciální;místní nebo regionální
+0xB;0x6;Special characteristics;;Speciální;
+0xB;0x7;Special characteristics;;Speciální;
+0xB;0x8;Special characteristics;;Speciální;
+0xB;0x9;Special characteristics;;Speciální;
+0xB;0xA;Special characteristics;;Speciální;
+0xB;0xB;Special characteristics;;Speciální;
+0xB;0xC;Special characteristics;;Speciální;
+0xB;0xD;Special characteristics;;Speciální;
+0xB;0xE;Special characteristics;;Speciální;
+0xB;0xF;Special characteristics;;Speciální;
+0xC;0x0;Adult;Adult;Pro dospělé;pro dospělé
+0xC;0x1;Adult;;Pro dospělé;
+0xC;0x2;Adult;;Pro dospělé;
+0xC;0x3;Adult;;Pro dospělé;
+0xC;0x4;Adult;;Pro dospělé;
+0xC;0x5;Adult;;Pro dospělé;
+0xC;0x6;Adult;;Pro dospělé;
+0xC;0x7;Adult;;Pro dospělé;
+0xC;0x8;Adult;;Pro dospělé;
+0xC;0x9;Adult;;Pro dospělé;
+0xC;0xA;Adult;;Pro dospělé;
+0xC;0xB;Adult;;Pro dospělé;
+0xC;0xC;Adult;;Pro dospělé;
+0xC;0xD;Adult;;Pro dospělé;
+0xC;0xE;Adult;;Pro dospělé;
+0xC;0xF;Adult;;Pro dospělé;
+0xD;0x0;Unknown;;Neznámé;
+0xD;0x1;Unknown;;Neznámé;
+0xD;0x2;Unknown;;Neznámé;
+0xD;0x3;Unknown;;Neznámé;
+0xD;0x4;Unknown;;Neznámé;
+0xD;0x5;Unknown;;Neznámé;
+0xD;0x6;Unknown;;Neznámé;
+0xD;0x7;Unknown;;Neznámé;
+0xD;0x8;Unknown;;Neznámé;
+0xD;0x9;Unknown;;Neznámé;
+0xD;0xA;Unknown;;Neznámé;
+0xD;0xB;Unknown;;Neznámé;
+0xD;0xC;Unknown;;Neznámé;
+0xD;0xD;Unknown;;Neznámé;
+0xD;0xE;Unknown;;Neznámé;
+0xD;0xF;Unknown;;Neznámé;
+0xE;0x0;Unknown;;Neznámé;
+0xE;0x1;Unknown;;Neznámé;
+0xE;0x2;Unknown;;Neznámé;
+0xE;0x3;Unknown;;Neznámé;
+0xE;0x4;Unknown;;Neznámé;
+0xE;0x5;Unknown;;Neznámé;
+0xE;0x6;Unknown;;Neznámé;
+0xE;0x7;Unknown;;Neznámé;
+0xE;0x8;Unknown;;Neznámé;
+0xE;0x9;Unknown;;Neznámé;
+0xE;0xA;Unknown;;Neznámé;
+0xE;0xB;Unknown;;Neznámé;
+0xE;0xC;Unknown;;Neznámé;
+0xE;0xD;Unknown;;Neznámé;
+0xE;0xE;Unknown;;Neznámé;
+0xE;0xF;Unknown;;Neznámé;
+0xF;0x0;User;;Vlastní;
+0xF;0x1;User;;Vlastní;
+0xF;0x2;User;;Vlastní;
+0xF;0x3;User;;Vlastní;
+0xF;0x4;User;;Vlastní;
+0xF;0x5;User;;Vlastní;
+0xF;0x6;User;;Vlastní;
+0xF;0x7;User;;Vlastní;
+0xF;0x8;User;;Vlastní;
+0xF;0x9;User;;Vlastní;
+0xF;0xA;User;;Vlastní;
+0xF;0xB;User;;Vlastní;
+0xF;0xC;User;;Vlastní;
+0xF;0xD;User;;Vlastní;
+0xF;0xE;User;;Vlastní;
+0xF;0xF;User;;Vlastní;

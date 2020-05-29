@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Kaaja.TvheadendClient</id>
+    <version>0.1.0-alpha</version>
+    <authors>Karel Honzl</authors>
+    <owners>kaaja</owners>
+    <projectUrl>https://github.com/kaaja-h/TvheadendClient</projectUrl>
+    <license type="expression">LGPL-3.0-or-later</license>
+    <title>TvheadendClient</title>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Client library for connecting to tvheadend. Reads EPG and recording data</description>
+    <summary>Client library for connecting to tvheadend. Reads EPG and recording data</summary>
+    <tags>Tvheadend EPG</tags>
+    <repositoryUrl>https://github.com/kaaja-h/TvheadendClient</repositoryUrl>
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Microsoft.CSharp" version="4.7.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Logging.Abstractions" version="3.1.4" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>
