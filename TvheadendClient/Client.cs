@@ -49,7 +49,6 @@ namespace TvheadendClient
             _client.Connect(_sender.Receive);
             dynamic helloResponse = Hello();
             PrepareDigest(helloResponse.Challenge);
-
             EnableAsyncMetadata();
             Connected = true;
         }
@@ -86,24 +85,6 @@ namespace TvheadendClient
                 throw new Exception();
             return res;
         }
-
-        /*
-        public GetDvrConfigsResponse GetDvrConfigs(GetDvrConfigsRequest request)
-        {
-            return Send<GetDvrConfigsRequest, GetDvrConfigsResponse>(request);
-        }
-        *
-        public AddDvrEntryResponse Record(AddDvrEntryRequest request)
-        {
-            return Send<AddDvrEntryRequest, AddDvrEntryResponse>(request);
-        }
-        /*
-        public DeleteDvrEntryResponse DeleteDvrEntry(DeleteDvrEntryRequest req){
-            return Send<DeleteDvrEntryRequest, DeleteDvrEntryResponse>(req);
-        }
-        */
-
-
 
 
         private MessageBase Hello()

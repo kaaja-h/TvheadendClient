@@ -30,16 +30,19 @@ namespace TvheadendClient.Data.Implementation
 
         public bool TryRecordEvent(long eventId, out long dvrEntryId)
         {
-            dynamic message = new MessageBase("addDvrEntry");
-            message.eventId = eventId;
-            MessageBase res = client.Send(message);
-            dvrEntryId = res.Get<long?>("id").GetValueOrDefault(0);
-            return res.Get<long?>("success").GetValueOrDefault(0) == 1;
+            return TryRecord(new AddDvrEntryData(eventId), out dvrEntryId);
         }
 
         public bool TryRecordEvent(IEpgEvent epgEvent, out long dvrEntryId)
         {
-            return TryRecordEvent(epgEvent.Id, out dvrEntryId);
+            return TryRecord(new AddDvrEntryData(epgEvent.Id), out dvrEntryId);
+        }
+
+        public bool TryRecord(AddDvrEntryData data, out long dvrEntryId)
+        {
+            MessageBase res = client.Send(data);
+            dvrEntryId = res.Get<long?>("id").GetValueOrDefault(0);
+            return res.Get<long?>("success").GetValueOrDefault(0) == 1;
         }
 
 

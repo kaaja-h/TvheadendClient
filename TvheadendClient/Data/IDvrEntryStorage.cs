@@ -14,5 +14,7 @@ namespace TvheadendClient.Data
         bool TryRecordEvent(long eventId, out long dvrEntryId);
 
         bool TryRecordEvent(IEpgEvent epgEvent, out long dvrEntryId);
+
+        bool TryRecord(AddDvrEntryData data, out long dvrEntryId);
     }
 }

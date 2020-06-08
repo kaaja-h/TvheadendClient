@@ -18,5 +18,20 @@ namespace TvheadendClient.Data.Implementation
             return new DateTime(ticks + (date * 1000L * TimeSpan.TicksPerMillisecond));
             
         }
+
+        public static DateTime? FromUnixTimestamp(this long? date)
+        {
+            return date?.FromUnixTimestamp();
+        }
+
+        public static long ToUnixTimestamp(this DateTime date)
+        {
+            return (date.Ticks - ticks) / 1000L / TimeSpan.TicksPerMillisecond;
+        }
+
+        public static long? ToUnixTimestamp(this DateTime? date)
+        {
+            return date?.ToUnixTimestamp();
+        }
     }
 }
