@@ -15,6 +15,8 @@ namespace TvheadendClient.Data.Implementation
         private readonly EpgEventHolder _epgEventHolder;
         private readonly AutoRecordDataHolder _autoRecordDataHolder;
         private readonly DvrEntryDataHolder _dvrEntryDataHolder;
+
+        private readonly TimerecEntryDataHolder _timerecEntryDataHolder;
         private readonly Client _client;
 
         private  readonly ConcurrentDictionary<long, EpgEvent> _epgEvents = new ConcurrentDictionary<long, EpgEvent>();
@@ -27,6 +29,8 @@ namespace TvheadendClient.Data.Implementation
         public IAutoRecordStorage AutoRecords => _autoRecordDataHolder;
 
         public IDvrEntryStorage DvrEntries => _dvrEntryDataHolder;
+        public ITimerecEntryStorage TimerecEntries => _timerecEntryDataHolder;
+
 
         public event EventHandler LoadComplete;
 
@@ -44,6 +48,7 @@ namespace TvheadendClient.Data.Implementation
             _epgEventHolder = new EpgEventHolder(this, _client);
             _autoRecordDataHolder = new AutoRecordDataHolder(this, _client);
             _dvrEntryDataHolder= new DvrEntryDataHolder(this,_client);
+            _timerecEntryDataHolder = new TimerecEntryDataHolder(this,_client);
             InitActions();
             Ready = false;
             
@@ -84,6 +89,7 @@ namespace TvheadendClient.Data.Implementation
             AddActions(_epgEventHolder.GetActions(), Actions);
             AddActions(_autoRecordDataHolder.GetActions(), Actions);
             AddActions(_dvrEntryDataHolder.GetActions(),Actions);
+            AddActions(_timerecEntryDataHolder.GetActions(),Actions);
         }
 
 

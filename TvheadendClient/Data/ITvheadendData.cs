@@ -11,6 +11,8 @@ namespace TvheadendClient.Data
         IAutoRecordStorage AutoRecords { get; }
         IDvrEntryStorage DvrEntries { get; }
 
+        ITimerecEntryStorage TimerecEntries { get; }
+
         event EventHandler LoadComplete;
         
         bool Ready { get; }
