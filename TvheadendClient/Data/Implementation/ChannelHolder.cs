@@ -5,7 +5,7 @@ namespace TvheadendClient.Data.Implementation
 {
     internal class ChannelHolder:DataHolder<long,Channel, IChannel>, IChannelStorage
     {
-        public ChannelHolder(TvheadendData data) : base(data, "channelAdd", "channelUpdate", "channelDelete")
+        public ChannelHolder(TvheadendData data, Client client) : base(data, "channelAdd", "channelUpdate", "channelDelete", client)
         {
 
         }

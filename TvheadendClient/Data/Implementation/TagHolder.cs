@@ -5,8 +5,8 @@ namespace TvheadendClient.Data.Implementation
 {
     internal class TagHolder : DataHolder<long, Tag, ITag>, ITagStorage
     {
-        public TagHolder(TvheadendData data) : base(data,
-            "tagAdd", "tagUpdate", "tagDelete")
+        public TagHolder(TvheadendData data, Client client) : base(data,
+            "tagAdd", "tagUpdate", "tagDelete", client)
         {
         }
 

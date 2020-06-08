@@ -25,14 +25,14 @@ namespace TvheadendClient
         public Client(ClientOptions options, ILoggerFactory loggerFactory)
         {
             if (options==null || string.IsNullOrEmpty(options.Host))
-                throw new ArgumentException("invalid options","options");
+                throw new ArgumentException("invalid options",nameof(options));
             if (loggerFactory == null)
-                throw new ArgumentException("invalid logger factory", "loggerFactory");
+                throw new ArgumentException("invalid logger factory", nameof(loggerFactory));
             _options = options;
             _client = new HtspClientSendReceiver(options.Host, options.Port, options.Ipv6, loggerFactory);
             _sender = new HtspMessageSender(_client, loggerFactory);
 
-            _data = new TvheadendData(loggerFactory.CreateLogger<TvheadendData>());
+            _data = new TvheadendData(loggerFactory.CreateLogger<TvheadendData>(),this);
         }
 
         private readonly TvheadendData _data;
@@ -73,7 +73,7 @@ namespace TvheadendClient
             _digest = sha.ComputeHash(data);
         }
 
-        private MessageBase Send(MessageBase message)
+        internal MessageBase Send(MessageBase message)
         {
             if (_digest != null)
             {

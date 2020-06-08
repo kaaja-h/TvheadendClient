@@ -12,6 +12,7 @@ namespace TvheadendClient.Data.Implementation
 
         protected readonly TvheadendData TvData;
         protected readonly ConcurrentDictionary<TIdType, TDataType> data;
+        protected readonly Client client;
         public IReadOnlyDictionary<TIdType, TInterfaceType> Items { get; private set; }
         public event EventHandler<ItemChangeEvent<TInterfaceType>> ItemDeleted;
         public event EventHandler<ItemChangeEvent<TInterfaceType>> ItemAdded;
@@ -21,10 +22,10 @@ namespace TvheadendClient.Data.Implementation
         private readonly string _updateMethod;
         private readonly string _deleteMethod;
 
-        public DataHolder(TvheadendData data, string createMethod, string updateMethod, string deleteMethod)
+        public DataHolder(TvheadendData data, string createMethod, string updateMethod, string deleteMethod, Client client)
         {
             TvData = data;
-
+            this.client = client;
             _createMethod = createMethod;
             _updateMethod = updateMethod;
             _deleteMethod = deleteMethod;

@@ -4,7 +4,7 @@ namespace TvheadendClient.Data.Implementation
 {
     internal class AutoRecordDataHolder : DataHolder<string, AutoRecord, IAutoRecord>, IAutoRecordStorage
     {
-        public AutoRecordDataHolder(TvheadendData data) : base(data, "autorecEntryAdd", "autorecEntryUpdate", "autorecEntryDelete")
+        public AutoRecordDataHolder(TvheadendData data, Client client) : base(data, "autorecEntryAdd", "autorecEntryUpdate", "autorecEntryDelete", client)
         {
         }
 

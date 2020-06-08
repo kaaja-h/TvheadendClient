@@ -14,11 +14,36 @@ namespace TvheadendClient.Data.Implementation
 
         private readonly ConcurrentDictionary<long, IReadOnlyCollection<IDvrEntry>> _byChannel = new ConcurrentDictionary<long, IReadOnlyCollection<IDvrEntry>>();
         public IReadOnlyDictionary<long, IReadOnlyCollection<IDvrEntry>> ByChannel => _byChannel;
+        public bool TryDeleteItem(long id)
+        {
+            dynamic message = new MessageBase("deleteDvrEntry");
+            message.id = id;
+            MessageBase res = client.Send(message);
+            return res.Get<long?>("success").GetValueOrDefault(0) == 1;
+
+        }
+
+        public bool TryDeleteItem(IDvrEntry item)
+        {
+            return TryDeleteItem(item.Id);
+        }
+
+        public bool TryRecordEvent(long eventId, out long dvrEntryId)
+        {
+            dynamic message = new MessageBase("addDvrEntry");
+            message.eventId = eventId;
+            MessageBase res = client.Send(message);
+            dvrEntryId = res.Get<long?>("id").GetValueOrDefault(0);
+            return res.Get<long?>("success").GetValueOrDefault(0) == 1;
+        }
+
+        public bool TryRecordEvent(IEpgEvent epgEvent, out long dvrEntryId)
+        {
+            return TryRecordEvent(epgEvent.Id, out dvrEntryId);
+        }
 
 
-
-
-        public DvrEntryDataHolder(TvheadendData data) : base(data, "dvrEntryAdd", "dvrEntryUpdate", "dvrEntryDelete")
+        public DvrEntryDataHolder(TvheadendData data, Client client) : base(data, "dvrEntryAdd", "dvrEntryUpdate", "dvrEntryDelete", client)
         {
         }
 

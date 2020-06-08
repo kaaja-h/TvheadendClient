@@ -15,6 +15,7 @@ namespace TvheadendClient.Data.Implementation
         private readonly EpgEventHolder _epgEventHolder;
         private readonly AutoRecordDataHolder _autoRecordDataHolder;
         private readonly DvrEntryDataHolder _dvrEntryDataHolder;
+        private readonly Client _client;
 
         private  readonly ConcurrentDictionary<long, EpgEvent> _epgEvents = new ConcurrentDictionary<long, EpgEvent>();
 
@@ -34,16 +35,15 @@ namespace TvheadendClient.Data.Implementation
 
         internal Dictionary<string, Action<MessageBase>> Actions;
 
-        internal TvheadendData(ILogger<TvheadendData> logger)
+        internal TvheadendData(ILogger<TvheadendData> logger, Client client)
         {
             _logger = logger;
-            _channelHolder = new ChannelHolder(this);
-            _tagHolder = new TagHolder(this);
-            _epgEventHolder = new EpgEventHolder(this);
-            
-            
-            _autoRecordDataHolder = new AutoRecordDataHolder(this);
-            _dvrEntryDataHolder= new DvrEntryDataHolder(this);
+            _client = client;
+            _channelHolder = new ChannelHolder(this, _client);
+            _tagHolder = new TagHolder(this, _client);
+            _epgEventHolder = new EpgEventHolder(this, _client);
+            _autoRecordDataHolder = new AutoRecordDataHolder(this, _client);
+            _dvrEntryDataHolder= new DvrEntryDataHolder(this,_client);
             InitActions();
             Ready = false;
             

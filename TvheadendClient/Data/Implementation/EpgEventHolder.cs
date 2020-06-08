@@ -13,7 +13,7 @@ namespace TvheadendClient.Data.Implementation
         private readonly ConcurrentDictionary<long, IReadOnlyCollection<IEpgEvent>> _byChannels = new ConcurrentDictionary<long, IReadOnlyCollection<IEpgEvent>>();
 
 
-        public EpgEventHolder(TvheadendData data) : base(data, "eventAdd", "eventUpdate", "eventDelete")
+        public EpgEventHolder(TvheadendData data, Client client) : base(data, "eventAdd", "eventUpdate", "eventDelete", client)
         {
 
         }
