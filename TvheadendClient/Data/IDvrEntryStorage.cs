@@ -7,14 +7,26 @@ namespace TvheadendClient.Data
         IReadOnlyDictionary<long, IReadOnlyCollection<IDvrEntry>> ByEvent { get; }
         IReadOnlyDictionary<long, IReadOnlyCollection<IDvrEntry>> ByChannel { get; }
 
-        bool TryDeleteItem(long id);
+        bool TryDelete(long id);
 
-        bool TryDeleteItem(IDvrEntry item);
+        bool TryDelete(IDvrEntry item);
+
+        bool TryCancel(long id);
+
+        bool TryCancel(IDvrEntry item);
+
+        bool TryStop(long id);
+
+        bool TryStop(IDvrEntry item);
 
         bool TryRecordEvent(long eventId, out long dvrEntryId);
 
         bool TryRecordEvent(IEpgEvent epgEvent, out long dvrEntryId);
 
-        bool TryRecord(AddDvrEntryData data, out long dvrEntryId);
+        bool TryAddDvrEntry(AddDvrEntryData data, out long dvrEntryId);
+
+        bool TryUpdateDvrEntry(UpdateDvrEntryData data);
+
+
     }
 }

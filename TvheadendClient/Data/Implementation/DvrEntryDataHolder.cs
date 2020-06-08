@@ -14,34 +14,49 @@ namespace TvheadendClient.Data.Implementation
 
         private readonly ConcurrentDictionary<long, IReadOnlyCollection<IDvrEntry>> _byChannel = new ConcurrentDictionary<long, IReadOnlyCollection<IDvrEntry>>();
         public IReadOnlyDictionary<long, IReadOnlyCollection<IDvrEntry>> ByChannel => _byChannel;
-        public bool TryDeleteItem(long id)
+
+
+        private bool End(long id, string method)
         {
-            dynamic message = new MessageBase("deleteDvrEntry");
+            dynamic message = new MessageBase(method);
             message.id = id;
             MessageBase res = client.Send(message);
             return res.Get<long?>("success").GetValueOrDefault(0) == 1;
-
         }
 
-        public bool TryDeleteItem(IDvrEntry item)
-        {
-            return TryDeleteItem(item.Id);
-        }
+        public bool TryDelete(long id) => End(id, "deleteDvrEntry");
 
-        public bool TryRecordEvent(long eventId, out long dvrEntryId)
-        {
-            return TryRecord(new AddDvrEntryData(eventId), out dvrEntryId);
-        }
+        public bool TryDelete(IDvrEntry item) => TryDelete(item.Id);
 
-        public bool TryRecordEvent(IEpgEvent epgEvent, out long dvrEntryId)
-        {
-            return TryRecord(new AddDvrEntryData(epgEvent.Id), out dvrEntryId);
-        }
 
-        public bool TryRecord(AddDvrEntryData data, out long dvrEntryId)
+        public bool TryCancel(long id) => End(id, "cancelDvrEntry");
+
+        public bool TryCancel(IDvrEntry item) => TryCancel(item.Id);
+
+
+        public bool TryStop(long id) => End(id, "stopDvrEntry");
+
+        public bool TryStop(IDvrEntry item) => TryStop(item.Id);
+
+
+        public bool TryRecordEvent(long eventId, out long dvrEntryId) =>
+            TryAddDvrEntry(new AddDvrEntryData(eventId), out dvrEntryId);
+        
+
+        public bool TryRecordEvent(IEpgEvent epgEvent, out long dvrEntryId) =>
+            TryAddDvrEntry(new AddDvrEntryData(epgEvent.Id), out dvrEntryId);
+        
+
+        public bool TryAddDvrEntry(AddDvrEntryData data, out long dvrEntryId)
         {
             MessageBase res = client.Send(data);
             dvrEntryId = res.Get<long?>("id").GetValueOrDefault(0);
+            return res.Get<long?>("success").GetValueOrDefault(0) == 1;
+        }
+
+        public bool TryUpdateDvrEntry(UpdateDvrEntryData data)
+        {
+            MessageBase res = client.Send(data);
             return res.Get<long?>("success").GetValueOrDefault(0) == 1;
         }
 

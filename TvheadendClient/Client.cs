@@ -106,7 +106,7 @@ namespace TvheadendClient
 
 
             Send(request);
-            
+            _data.Init();
             return;
         }
     }
