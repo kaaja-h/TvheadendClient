@@ -1,9 +1,12 @@
 ﻿namespace TvheadendClient.Messages
 {
-    public class MessageBase: DynamicMessage
+    /// <summary>
+    /// Message bese for sending to server
+    /// </summary>
+    public class MessageBase: DynamicMessageItem
     {
 
-        internal MessageBase(DynamicMessage msg)
+        internal MessageBase(DynamicMessageItem msg)
         {
             this.Data = msg.Data;
         }
@@ -13,6 +16,10 @@
 
         }
 
+        /// <summary>
+        /// Create message with appropriate method
+        /// </summary>
+        /// <param name="method"></param>
         public MessageBase(string method)
         {
             Method = method;

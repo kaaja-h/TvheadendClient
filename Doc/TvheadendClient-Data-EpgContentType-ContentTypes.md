@@ -1,0 +1,9 @@
+#### [TvheadendClient](./index.md 'index')
+### [TvheadendClient.Data](./TvheadendClient-Data.md 'TvheadendClient.Data').[EpgContentType](./TvheadendClient-Data-EpgContentType.md 'TvheadendClient.Data.EpgContentType')
+## EpgContentType.ContentTypes Property
+Loaded content types for languages  
+```csharp
+public static System.Collections.Generic.IReadOnlyDictionary<System.Globalization.CultureInfo,System.Collections.Generic.IReadOnlyDictionary<long,TvheadendClient.Data.EpgContentType>> ContentTypes { get; }
+```
+#### Property Value
+[System.Collections.Generic.IReadOnlyDictionary&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IReadOnlyDictionary-2 'System.Collections.Generic.IReadOnlyDictionary`2')[System.Globalization.CultureInfo](https://docs.microsoft.com/en-us/dotnet/api/System.Globalization.CultureInfo 'System.Globalization.CultureInfo')[,](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IReadOnlyDictionary-2 'System.Collections.Generic.IReadOnlyDictionary`2')[System.Collections.Generic.IReadOnlyDictionary&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IReadOnlyDictionary-2 'System.Collections.Generic.IReadOnlyDictionary`2')[System.Int64](https://docs.microsoft.com/en-us/dotnet/api/System.Int64 'System.Int64')[,](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IReadOnlyDictionary-2 'System.Collections.Generic.IReadOnlyDictionary`2')[EpgContentType](./TvheadendClient-Data-EpgContentType.md 'TvheadendClient.Data.EpgContentType')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IReadOnlyDictionary-2 'System.Collections.Generic.IReadOnlyDictionary`2')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IReadOnlyDictionary-2 'System.Collections.Generic.IReadOnlyDictionary`2')  

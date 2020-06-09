@@ -2,18 +2,21 @@ using System;
 
 namespace TvheadendClient.Exceptions
 {
+    /// <summary>
+    /// Exception raised when noacces is returned from server
+    /// </summary>
     public class NoAccessException : HtspException
     {
-        public NoAccessException() : base("Access disabled to tvheadend")
+        internal NoAccessException() : base("Access disabled to tvheadend")
         {
         }
 
-        public NoAccessException(string message) : base(message)
+        internal NoAccessException(string message) : base(message)
         {
 
         }
 
-        public NoAccessException(string message, Exception innerException) : base(message, innerException)
+        internal NoAccessException(string message, Exception innerException) : base(message, innerException)
         {
 
         }

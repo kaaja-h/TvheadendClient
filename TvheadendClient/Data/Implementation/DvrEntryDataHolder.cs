@@ -1,6 +1,7 @@
 ﻿using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using TvheadendClient.Data.Dvr;
 using TvheadendClient.Messages;
 
 namespace TvheadendClient.Data.Implementation
@@ -83,7 +84,7 @@ namespace TvheadendClient.Data.Implementation
                         return b;
                     }
                 );
-                base.TvData.Events.UpdatedExternal(data.EventId.Value);
+                base.TvData.EpgEventHolder.UpdatedExternal(data.EventId.Value);
             }
 
             _byChannel.AddOrUpdate(
@@ -109,7 +110,7 @@ namespace TvheadendClient.Data.Implementation
                         return b;
                     }
                 );
-                base.TvData.Events.UpdatedExternal(data.EventId.Value);
+                base.TvData.EpgEventHolder.UpdatedExternal(data.EventId.Value);
             }
             _byChannel.AddOrUpdate(
                 data.ChannelId,

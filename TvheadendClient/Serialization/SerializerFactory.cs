@@ -70,7 +70,7 @@ namespace TvheadendClient.Serialization
                     case HtspMessageItemType.List:
                         return GetSerializerForType(typeof(IEnumerable));
                     case HtspMessageItemType.Map:
-                        return GetSerializerForType(typeof(DynamicMessage));
+                        return GetSerializerForType(typeof(DynamicMessageItem));
                 }
                 throw new HtspMessageException("chyba");
             });

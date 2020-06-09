@@ -3,6 +3,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
+using TvheadendClient.Data.Dvr;
 using TvheadendClient.Messages;
 
 namespace TvheadendClient.Data.Implementation
@@ -11,27 +12,26 @@ namespace TvheadendClient.Data.Implementation
     {
         private readonly ILogger<TvheadendData> _logger;
 
-        private readonly ChannelHolder _channelHolder;
-        private readonly TagHolder _tagHolder;
-        private readonly EpgEventHolder _epgEventHolder;
-        private readonly AutoRecordDataHolder _autoRecordDataHolder;
-        private readonly DvrEntryDataHolder _dvrEntryDataHolder;
-
-        private readonly TimerecEntryDataHolder _timerecEntryDataHolder;
+        internal readonly ChannelHolder ChannelHolder;
+        internal readonly TagHolder TagHolder;
+        internal readonly EpgEventHolder EpgEventHolder;
+        internal readonly AutoRecordingDataHolder AutoRecordingDataHolder;
+        internal readonly DvrEntryDataHolder DvrEntryDataHolder;
+        internal readonly TimeRecordingDataHolder TimeRecordingDataHolder;
         private readonly Client _client;
-        private readonly Dictionary<string, IDvrConfiguration> _dvrConfiguration = new Dictionary<string, IDvrConfiguration>();
+        internal readonly Dictionary<string, IDvrConfiguration> _dvrConfiguration = new Dictionary<string, IDvrConfiguration>();
 
-        private readonly ConcurrentDictionary<long, EpgEvent> _epgEvents = new ConcurrentDictionary<long, EpgEvent>();
 
-        public ITagStorage Tags => _tagHolder;
-        public IChannelStorage Channels => _channelHolder;
 
-        public IEpgEventStorage Events => _epgEventHolder;
+        public ITagStorage Tags => TagHolder;
+        public IChannelStorage Channels => ChannelHolder;
 
-        public IAutoRecordStorage AutoRecords => _autoRecordDataHolder;
+        public IEpgEventStorage Events => EpgEventHolder;
 
-        public IDvrEntryStorage DvrEntries => _dvrEntryDataHolder;
-        public ITimerecEntryStorage TimerecEntries => _timerecEntryDataHolder;
+        public IAutoRecordingStorage AutoRecordings => AutoRecordingDataHolder;
+
+        public IDvrEntryStorage DvrEntries => DvrEntryDataHolder;
+        public ITimeRecordingStorage TimeRecordings => TimeRecordingDataHolder;
 
         public IReadOnlyDictionary<string, IDvrConfiguration> DvrConfigurations => _dvrConfiguration;
 
@@ -46,26 +46,26 @@ namespace TvheadendClient.Data.Implementation
         {
             _logger = logger;
             _client = client;
-            _channelHolder = new ChannelHolder(this, _client);
-            _tagHolder = new TagHolder(this, _client);
-            _epgEventHolder = new EpgEventHolder(this, _client);
-            _autoRecordDataHolder = new AutoRecordDataHolder(this, _client);
-            _dvrEntryDataHolder = new DvrEntryDataHolder(this, _client);
-            _timerecEntryDataHolder = new TimerecEntryDataHolder(this, _client);
+            ChannelHolder = new ChannelHolder(this, _client);
+            TagHolder = new TagHolder(this, _client);
+            EpgEventHolder = new EpgEventHolder(this, _client);
+            AutoRecordingDataHolder = new AutoRecordingDataHolder(this, _client);
+            DvrEntryDataHolder = new DvrEntryDataHolder(this, _client);
+            TimeRecordingDataHolder = new TimeRecordingDataHolder(this, _client);
             InitActions();
         }
 
 
         public bool Ready => _asyncReady && _syncReady;
 
-        private object readyLock = new object();
+        private readonly object readyLock = new object();
 
         private bool _asyncReady = false;
         private bool _syncReady = false;
 
-        internal HashSet<string> contentTypes = new HashSet<string>();
+        private HashSet<string> _contentTypes = new HashSet<string>();
 
-        public IReadOnlyCollection<string> ContentTypes => contentTypes;
+        public IReadOnlyCollection<string> ContentTypes => _contentTypes;
 
 
         private void InitialSyncCompleted(MessageBase msg)
@@ -93,12 +93,12 @@ namespace TvheadendClient.Data.Implementation
 
                 {"initialSyncCompleted", a=> InitialSyncCompleted(a)},
             };
-            AddActions(_tagHolder.GetActions(), Actions);
-            AddActions(_channelHolder.GetActions(), Actions);
-            AddActions(_epgEventHolder.GetActions(), Actions);
-            AddActions(_autoRecordDataHolder.GetActions(), Actions);
-            AddActions(_dvrEntryDataHolder.GetActions(), Actions);
-            AddActions(_timerecEntryDataHolder.GetActions(), Actions);
+            AddActions(TagHolder.GetActions(), Actions);
+            AddActions(ChannelHolder.GetActions(), Actions);
+            AddActions(EpgEventHolder.GetActions(), Actions);
+            AddActions(AutoRecordingDataHolder.GetActions(), Actions);
+            AddActions(DvrEntryDataHolder.GetActions(), Actions);
+            AddActions(TimeRecordingDataHolder.GetActions(), Actions);
         }
 
         internal void Init()

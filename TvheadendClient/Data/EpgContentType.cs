@@ -8,11 +8,20 @@ using System.Reflection;
 
 namespace TvheadendClient.Data
 {
+    /// <summary>
+    /// List of EPG content types using RFC
+    /// </summary>
     public class EpgContentType
     {
-
+        /// <summary>
+        /// Loaded content types for default language
+        /// </summary>
         public static IReadOnlyDictionary<long, EpgContentType> DefaultContentTypes =>
             _contentTypes.Value[defaultCuntureCultureInfo];
+
+        /// <summary>
+        /// Loaded content types for languages
+        /// </summary>
         public static IReadOnlyDictionary<CultureInfo, IReadOnlyDictionary<long, EpgContentType>> ContentTypes => _contentTypes.Value;
 
 
@@ -77,11 +86,29 @@ namespace TvheadendClient.Data
             return output.ToDictionary(d=>d.Key, d=>(IReadOnlyDictionary<long, EpgContentType>)d.Value);
         }
 
+        /// <summary>
+        /// Epg level1 byte type 
+        /// </summary>
         public byte Level1 { get; private set; }
+
+        /// <summary>
+        /// Epg level2 byte type 
+        /// </summary>
         public byte Level2 { get; private set; }
+
+        /// <summary>
+        /// Level 1 description
+        /// </summary>
         public string Level1Description { get; private set; }
+
+        /// <summary>
+        /// Level 2 description
+        /// </summary>
         public string Level2Description { get; private set; }
 
+        /// <summary>
+        /// Type value
+        /// </summary>
         public long Value { get; private set; }
 
 

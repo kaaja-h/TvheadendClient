@@ -2,18 +2,21 @@ using System;
 
 namespace TvheadendClient.Exceptions
 {
+    /// <summary>
+    /// Exception throwed when error serializing and deserializing message
+    /// </summary>
     public class HtspMessageException : HtspException
     {
-        public HtspMessageException(string message) : base(message)
+        internal HtspMessageException(string message) : base(message)
         {
         }
 
-        public HtspMessageException()
+        internal HtspMessageException()
         {
 
         }
 
-        public HtspMessageException(string message, Exception innerException) : base(message, innerException)
+        internal HtspMessageException(string message, Exception innerException) : base(message, innerException)
         {
         }
     }

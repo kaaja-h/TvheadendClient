@@ -17,7 +17,7 @@ namespace TvheadendClient.Data.Implementation
 
         public string Icon { get; private set; }
 
-        public IEnumerable<ITag> Tags => TagIds.Select(t => Data.Tags.Items[t]);
+        public IEnumerable<ITag> Tags => TagIds.Select(t => Data.Tags[t]);
 
         public IReadOnlyCollection<long> TagIds {get; private set; }
 

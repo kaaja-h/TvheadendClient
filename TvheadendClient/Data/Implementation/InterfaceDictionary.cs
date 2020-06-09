@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace TvheadendClient.Data.Implementation
 {
-    public class InterfaceDictionary<KeyType, ValueType, InterfaceType>: IReadOnlyDictionary<KeyType, InterfaceType>
+    internal class InterfaceDictionary<KeyType, ValueType, InterfaceType>: IReadOnlyDictionary<KeyType, InterfaceType>
     where ValueType: InterfaceType
     {
         private readonly ConcurrentDictionary<KeyType, ValueType> _data;

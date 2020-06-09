@@ -1,6 +1,9 @@
-﻿namespace TvheadendClient.Data.Implementation
+﻿using TvheadendClient.Data.Dvr;
+
+namespace TvheadendClient.Data.Implementation
 {
-    public class DvrConfiguration:IDvrConfiguration
+
+    class DvrConfiguration:IDvrConfiguration
     {
         public string Id { get; internal set; }
         public string Name { get; internal set; }

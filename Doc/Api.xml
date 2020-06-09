@@ -1,0 +1,920 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TvheadendClient</name>
+    </assembly>
+    <members>
+        <member name="T:TvheadendClient.Client">
+            <summary>
+            Client for connecting to tvheadend server
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Client.Connected">
+            <summary>
+            Shows if client is connected
+            </summary>
+        </member>
+        <member name="M:TvheadendClient.Client.#ctor(TvheadendClient.ClientOptions)">
+            <summary>
+            Creates new client
+            </summary>
+            <param name="options">connection options</param>
+        </member>
+        <member name="M:TvheadendClient.Client.#ctor(TvheadendClient.ClientOptions,Microsoft.Extensions.Logging.ILoggerFactory)">
+            <summary>
+            Creates new client
+            </summary>
+            <param name="options">connection options</param>
+            <param name="loggerFactory">Logger factory instance</param>
+        </member>
+        <member name="P:TvheadendClient.Client.Data">
+            <summary>
+            Data readed from server
+            </summary>
+        </member>
+        <member name="M:TvheadendClient.Client.Dispose">
+            <summary>
+            <see cref="T:System.IDisposable"/>
+            </summary>
+        </member>
+        <member name="M:TvheadendClient.Client.Connect">
+            <summary>
+            Connect to server
+            </summary>
+        </member>
+        <member name="M:TvheadendClient.Client.Disconnect">
+            <summary>
+            Disconnect from server
+            </summary>
+        </member>
+        <member name="T:TvheadendClient.ClientOptions">
+            <summary>
+            Oprtions for client - connection setting etc
+            </summary>
+        </member>
+        <member name="M:TvheadendClient.ClientOptions.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.ClientOptions.Host">
+            <summary>
+            Host - required
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.ClientOptions.Port">
+            <summary>
+            Port default 9982
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.ClientOptions.Ipv6">
+            <summary>
+            Flag to use ipv6 instead ipv4
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.ClientOptions.UserName">
+            <summary>
+            UserName - optiona
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.ClientOptions.Password">
+            <summary>
+            Password - needed when username is provided
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.ClientOptions.Culture">
+            <summary>
+            Culture for readind data from server
+            </summary>
+        </member>
+        <member name="T:TvheadendClient.Data.DaysOfWeek">
+            <summary>
+            Enum for days of week Multiple options can be specified using |
+            </summary>
+        </member>
+        <member name="F:TvheadendClient.Data.DaysOfWeek.Monday">
+            <summary>
+            Monday
+            </summary>
+        </member>
+        <member name="F:TvheadendClient.Data.DaysOfWeek.Tuesday">
+            <summary>
+            Tuesday
+            </summary>
+        </member>
+        <member name="F:TvheadendClient.Data.DaysOfWeek.Wednesday">
+            <summary>
+            Wednesday
+            </summary>
+        </member>
+        <member name="F:TvheadendClient.Data.DaysOfWeek.Thursday">
+            <summary>
+            Thursday
+            </summary>
+        </member>
+        <member name="F:TvheadendClient.Data.DaysOfWeek.Friday">
+            <summary>
+            Friday
+            </summary>
+        </member>
+        <member name="F:TvheadendClient.Data.DaysOfWeek.Saturday">
+            <summary>
+            Saturday
+            </summary>
+        </member>
+        <member name="F:TvheadendClient.Data.DaysOfWeek.Sunday">
+            <summary>
+            Sunday
+            </summary>
+        </member>
+        <member name="F:TvheadendClient.Data.DaysOfWeek.Everyday">
+            <summary>
+            Everyday
+            </summary>
+        </member>
+        <member name="T:TvheadendClient.Data.Dvr.AddDvrEntryData">
+            <summary>
+            Request data for creating new DVR entry
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.AddDvrEntryData.EventId">
+            <summary>
+            Event Id
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.AddDvrEntryData.ChannelId">
+            <summary>
+            ChannelId
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.AddDvrEntryData.Start">
+            <summary>
+            Start of recording
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.AddDvrEntryData.Stop">
+            <summary>
+            Stop of recording
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.AddDvrEntryData.StartExtra">
+            <summary>
+            Extra time for recording start in minutes
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.AddDvrEntryData.StopExtra">
+            <summary>
+            Extra stop for recording stop in minutes
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.AddDvrEntryData.Retention">
+            <summary>
+            Recording retention in days
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.AddDvrEntryData.Title">
+            <summary>
+            Recording Title
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.AddDvrEntryData.Subtitle">
+            <summary>
+            Recording Subtitle
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.AddDvrEntryData.Description">
+            <summary>
+            Recording description
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.AddDvrEntryData.Enabled">
+            <summary>
+            Recording enabled
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.AddDvrEntryData.Priority">
+            <summary>
+            Priority
+            </summary>
+        </member>
+        <member name="M:TvheadendClient.Data.Dvr.AddDvrEntryData.#ctor(System.Int64)">
+            <summary>
+            Creates new Add recording data 
+            </summary>
+            <param name="eventId">Event id</param>
+        </member>
+        <member name="M:TvheadendClient.Data.Dvr.AddDvrEntryData.#ctor(System.Int64,System.DateTime,System.DateTime,System.String)">
+            <summary>
+            Creates new Add recording data
+            </summary>
+            <param name="channelId">Id of channel</param>
+            <param name="start">start of recording</param>
+            <param name="stop">stop of recording</param>
+            <param name="title">recording title</param>
+            <exception cref="T:System.ArgumentException">throws when title is not set</exception>
+        </member>
+        <member name="M:TvheadendClient.Data.Dvr.AddDvrEntryData.#ctor(TvheadendClient.Data.IChannel,System.DateTime,System.DateTime,System.String)">
+            <summary>
+            Creates new Add recording data
+            </summary>
+            <param name="channel">Channel</param>
+            <param name="start">start of recording</param>
+            <param name="stop">stop of recording</param>
+            <param name="title">recording title</param>
+        </member>
+        <member name="T:TvheadendClient.Data.Dvr.IAutoRecordingEntry">
+            <summary>
+            Automatic recording based on epg data
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.IAutoRecordingEntry.Enabled">
+            <summary>
+            Enabled
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.IAutoRecordingEntry.Title">
+            <summary>
+            Title for recording
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.IAutoRecordingEntry.Name">
+            <summary>
+            Autorecording name
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.IAutoRecordingEntry.ChannelId">
+            <summary>
+            Channel id
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.IAutoRecordingEntry.Channel">
+            <summary>
+            Channel
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.IAutoRecordingEntry.Fulltext">
+            <summary>
+            Fulltext enabled
+            </summary>
+        </member>
+        <member name="T:TvheadendClient.Data.Dvr.IAutoRecordingStorage">
+            <summary>
+            Storage for automatic recordings
+            </summary>
+        </member>
+        <member name="T:TvheadendClient.Data.Dvr.IDvrConfiguration">
+            <summary>
+            Dvr configuration item
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.IDvrConfiguration.Name">
+            <summary>
+            Dvr configuration item name
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.IDvrConfiguration.Comment">
+            <summary>
+            Comment
+            </summary>
+        </member>
+        <member name="T:TvheadendClient.Data.Dvr.IDvrEntry">
+            <summary>
+            Dvr entry
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.IDvrEntry.ChannelId">
+            <summary>
+            ChannelId
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.IDvrEntry.Channel">
+            <summary>
+            Channel
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.IDvrEntry.Event">
+            <summary>
+            Event
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.IDvrEntry.EventId">
+            <summary>
+            EventId
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.IDvrEntry.Start">
+            <summary>
+            Start
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.IDvrEntry.Stop">
+            <summary>
+            Stop
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.IDvrEntry.AutorecordId">
+            <summary>
+            AutorecordingId
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.IDvrEntry.AutoRecordingEntry">
+            <summary>
+            Autorecording
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.IDvrEntry.Description">
+            <summary>
+            Description
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.IDvrEntry.Title">
+            <summary>
+            Title
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.IDvrEntry.Subtitle">
+            <summary>
+            Subtitle
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.IDvrEntry.Summary">
+            <summary>
+            Summary
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.IDvrEntry.State">
+            <summary>
+            State
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.IDvrEntry.Enabled">
+            <summary>
+            Enabled
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.IDvrEntry.Comment">
+            <summary>
+            Comment
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.IDvrEntry.TimerecId">
+            <summary>
+            Time recording Id
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.IDvrEntry.TimeRecording">
+            <summary>
+            Time recording
+            </summary>
+        </member>
+        <member name="T:TvheadendClient.Data.Dvr.IDvrEntryStorage">
+            <summary>
+            Dvr entry storage. 
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.IDvrEntryStorage.ByEvent">
+            <summary>
+            Dvr events indexed by event id
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.IDvrEntryStorage.ByChannel">
+            <summary>
+            Dvr events indexed by channel id
+            </summary>
+        </member>
+        <member name="M:TvheadendClient.Data.Dvr.IDvrEntryStorage.TryDelete(System.Int64)">
+            <summary>
+            Try delete dvr entry by id
+            </summary>
+            <param name="id">dvr entry id</param>
+            <returns>true when success</returns>
+        </member>
+        <member name="M:TvheadendClient.Data.Dvr.IDvrEntryStorage.TryDelete(TvheadendClient.Data.Dvr.IDvrEntry)">
+            <summary>
+            Try delete dvr entry by id
+            </summary>
+            <param name="item">dvr entry from deleting</param>
+            <returns>true when success</returns>
+        </member>
+        <member name="M:TvheadendClient.Data.Dvr.IDvrEntryStorage.TryCancel(System.Int64)">
+            <summary>
+            Try cancel dvr entry by id (do not delete)
+            </summary>
+            <param name="id">dvr entry id</param>
+            <returns>true when success</returns>
+        </member>
+        <member name="M:TvheadendClient.Data.Dvr.IDvrEntryStorage.TryCancel(TvheadendClient.Data.Dvr.IDvrEntry)">
+            <summary>
+            Try cancel dvr entry by id (do not delete)
+            </summary>
+            <param name="item">dvr entry from deleting</param>
+            <returns>true when success</returns>
+        </member>
+        <member name="M:TvheadendClient.Data.Dvr.IDvrEntryStorage.TryStop(System.Int64)">
+            <summary>
+            Try stop recording (only when recording in progress)
+            </summary>
+            <param name="id">dvr entry id</param>
+            <returns>true when success</returns>
+        </member>
+        <member name="M:TvheadendClient.Data.Dvr.IDvrEntryStorage.TryStop(TvheadendClient.Data.Dvr.IDvrEntry)">
+            <summary>
+            Try stop recording (only when recording in progress)
+            </summary>
+            <param name="item">dvr entry from deleting</param>
+            <returns>true when success</returns>
+        </member>
+        <member name="M:TvheadendClient.Data.Dvr.IDvrEntryStorage.TryRecordEvent(System.Int64,System.Int64@)">
+            <summary>
+            Try add event recording 
+            </summary>
+            <param name="eventId">event id</param>
+            <param name="dvrEntryId">id of created dvr entry</param>
+            <returns>true when success</returns>
+        </member>
+        <member name="M:TvheadendClient.Data.Dvr.IDvrEntryStorage.TryRecordEvent(TvheadendClient.Data.IEpgEvent,System.Int64@)">
+            <summary>
+            Try add event recording 
+            </summary>
+            <param name="epgEvent">Epg event</param>
+            <param name="dvrEntryId">id of created dvr entry</param>
+            <returns>true when success</returns>
+        </member>
+        <member name="M:TvheadendClient.Data.Dvr.IDvrEntryStorage.TryAddDvrEntry(TvheadendClient.Data.Dvr.AddDvrEntryData,System.Int64@)">
+            <summary>
+            Add new Dvr entry
+            </summary>
+            <param name="data">data for new dvr entry</param>
+            <param name="dvrEntryId">id of created dvr entry</param>
+            <returns>true when success</returns>
+        </member>
+        <member name="M:TvheadendClient.Data.Dvr.IDvrEntryStorage.TryUpdateDvrEntry(TvheadendClient.Data.Dvr.UpdateDvrEntryData)">
+            <summary>
+            
+            </summary>
+            <param name="data">data for updating dvr entry</param>
+            <returns>true when success</returns>
+        </member>
+        <member name="T:TvheadendClient.Data.Dvr.ITimeRecording">
+            <summary>
+            Time recording entry
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.ITimeRecording.Title">
+            <summary>
+            Recording title (naming of result)
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.ITimeRecording.Enabled">
+            <summary>
+            Enabled
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.ITimeRecording.Name">
+            <summary>
+            Time recording name
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.ITimeRecording.ChannelId">
+            <summary>
+            Channel Id
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.ITimeRecording.Channel">
+            <summary>
+            Channel
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.ITimeRecording.DaysOfWeek">
+            <summary>
+            Days of week (can contains multiple days) 
+            </summary>
+            <example><code language="c#">
+            (DaysOfWeek &amp; DaysOfWeek.Tuesday) == DaysOfWeek.Tuesday
+            </code>
+            </example>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.ITimeRecording.Start">
+            <summary>
+            Time recording start in munutes from midnight
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.ITimeRecording.Stop">
+            <summary>
+            Time recording start in munutes from midnight
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.ITimeRecording.Retention">
+            <summary>
+            Recording retention in days
+            </summary>
+        </member>
+        <member name="T:TvheadendClient.Data.Dvr.ITimeRecordingStorage">
+            <summary>
+            Time recording storage
+            </summary>
+        </member>
+        <member name="T:TvheadendClient.Data.Dvr.UpdateDvrEntryData">
+            <summary>
+            Data for updating Dvr Entry. When is property null, property is not changed
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.UpdateDvrEntryData.Id">
+            <summary>
+            Dvr entry Id
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.UpdateDvrEntryData.ChannelId">
+            <summary>
+            Channel Id
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.UpdateDvrEntryData.Start">
+            <summary>
+            Recording start
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.UpdateDvrEntryData.Stop">
+            <summary>
+            Recording stop
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.UpdateDvrEntryData.StartExtra">
+            <summary>
+            Extra time before recording start
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.UpdateDvrEntryData.StopExtra">
+            <summary>
+            Extra time after recording stop
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.UpdateDvrEntryData.Title">
+            <summary>
+            Recording title
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.UpdateDvrEntryData.Subtitle">
+            <summary>
+            Recording subtitle
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.UpdateDvrEntryData.Description">
+            <summary>
+            Recording description
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.UpdateDvrEntryData.Enabled">
+            <summary>
+            Enabled
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.UpdateDvrEntryData.Retention">
+            <summary>
+            Recording retention in days
+            </summary>
+        </member>
+        <member name="M:TvheadendClient.Data.Dvr.UpdateDvrEntryData.#ctor(System.Int64)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="id">Id of updated recording</param>
+        </member>
+        <member name="T:TvheadendClient.Data.EpgContentType">
+            <summary>
+            List of EPG content types using RFC
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.EpgContentType.DefaultContentTypes">
+            <summary>
+            Loaded content types for default language
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.EpgContentType.ContentTypes">
+            <summary>
+            Loaded content types for languages
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.EpgContentType.Level1">
+            <summary>
+            Epg level1 byte type 
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.EpgContentType.Level2">
+            <summary>
+            Epg level2 byte type 
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.EpgContentType.Level1Description">
+            <summary>
+            Level 1 description
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.EpgContentType.Level2Description">
+            <summary>
+            Level 2 description
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.EpgContentType.Value">
+            <summary>
+            Type value
+            </summary>
+        </member>
+        <member name="T:TvheadendClient.Data.IChannel">
+            <summary>
+            Channel
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.IChannel.Events">
+            <summary>
+            Events
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.IChannel.Number">
+            <summary>
+            Channel number
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.IChannel.NumberMinor">
+            <summary>
+            Channel number minor
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.IChannel.Name">
+            <summary>
+            channel name
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.IChannel.Icon">
+            <summary>
+            channel Icon
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.IChannel.Tags">
+            <summary>
+            Channel Tags
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.IChannel.TagIds">
+            <summary>
+            Channel tag Ids
+            </summary>
+        </member>
+        <member name="T:TvheadendClient.Data.IChannelStorage">
+            <summary>
+            Channels storage
+            </summary>
+        </member>
+        <member name="T:TvheadendClient.Data.IDataItem`1">
+            <summary>
+            Tvheadend data item with id
+            </summary>
+            <typeparam name="TId">type of Id</typeparam>
+        </member>
+        <member name="P:TvheadendClient.Data.IDataItem`1.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="T:TvheadendClient.Data.IDataItem">
+            <summary>
+            Tvheadend data item
+            </summary>
+        </member>
+        <member name="T:TvheadendClient.Data.IEpgEvent">
+            <summary>
+            Epg event data
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.IEpgEvent.Channel">
+            <summary>
+            Channel
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.IEpgEvent.ChannelId">
+            <summary>
+            Channel id
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.IEpgEvent.Title">
+            <summary>
+            Event title
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.IEpgEvent.Summary">
+            <summary>
+            Event summary
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.IEpgEvent.Description">
+            <summary>
+            Event description
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.IEpgEvent.Start">
+            <summary>
+            Event start
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.IEpgEvent.Stop">
+            <summary>
+            Event stop
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.IEpgEvent.ContentTypeId">
+            <summary>
+            Content type Id
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.IEpgEvent.ContentType">
+            <summary>
+            Content Type
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.IEpgEvent.DvrEntries">
+            <summary>
+            Related Dvr entries
+            </summary>
+        </member>
+        <member name="T:TvheadendClient.Data.IEpgEventStorage">
+            <summary>
+            Epg event storage
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.IEpgEventStorage.ByChannels">
+            <summary>
+            Events indexed by channels
+            </summary>
+        </member>
+        <member name="T:TvheadendClient.Data.IItems`2">
+            <summary>
+            Items storage
+            </summary>
+            <typeparam name="TInterfaceType"></typeparam>
+            <typeparam name="TIdType"></typeparam>
+        </member>
+        <member name="E:TvheadendClient.Data.IItems`2.ItemDeleted">
+            <summary>
+            Event is raised when item is deleted
+            </summary>
+        </member>
+        <member name="E:TvheadendClient.Data.IItems`2.ItemAdded">
+            <summary>
+            Event is raised when new item is added
+            </summary>
+        </member>
+        <member name="E:TvheadendClient.Data.IItems`2.ItemChanged">
+            <summary>
+            event is raised when item is modified
+            </summary>
+        </member>
+        <member name="T:TvheadendClient.Data.ITag">
+            <summary>
+            Tag
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.ITag.Channels">
+            <summary>
+            Channels
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.ITag.Name">
+            <summary>
+            Tag name
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.ITag.Index">
+            <summary>
+            Tag index
+            </summary>
+        </member>
+        <member name="T:TvheadendClient.Data.ITagStorage">
+            <summary>
+            Tag storage
+            </summary>
+        </member>
+        <member name="T:TvheadendClient.Data.ItemChangeEvent`1">
+            <summary>
+            Item changed data
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:TvheadendClient.Data.ItemChangeEvent`1.Item">
+            <summary>
+            New event/ updated event (after updating) / deleted event data
+            </summary>
+        </member>
+        <member name="T:TvheadendClient.Data.ITvheadendData">
+            <summary>
+            TvheadendData data storage
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.ITvheadendData.Tags">
+            <summary>
+            Tags
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.ITvheadendData.Channels">
+            <summary>
+            Channels
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.ITvheadendData.Events">
+            <summary>
+            Events
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.ITvheadendData.AutoRecordings">
+            <summary>
+            Auto recordings
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.ITvheadendData.DvrEntries">
+            <summary>
+            DvrEntries
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.ITvheadendData.TimeRecordings">
+            <summary>
+            Time recording entries
+            </summary>
+        </member>
+        <member name="E:TvheadendClient.Data.ITvheadendData.LoadComplete">
+            <summary>
+            Fired when initial data loading is done
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.ITvheadendData.Ready">
+            <summary>
+            All data loaded - true when initial load is done
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.ITvheadendData.ContentTypes">
+            <summary>
+            Content Type storage
+            </summary>
+        </member>
+        <member name="T:TvheadendClient.Exceptions.HtspException">
+            <summary>
+            Exception raised when communicating with server
+            </summary>
+        </member>
+        <member name="T:TvheadendClient.Exceptions.HtspMessageException">
+            <summary>
+            Exception throwed when error serializing and deserializing message
+            </summary>
+        </member>
+        <member name="T:TvheadendClient.Exceptions.NoAccessException">
+            <summary>
+            Exception raised when noacces is returned from server
+            </summary>
+        </member>
+        <member name="T:TvheadendClient.Messages.DynamicMessageItem">
+            <summary>
+            Dynamic message item for comunicating with server
+            </summary>
+        </member>
+        <member name="M:TvheadendClient.Messages.DynamicMessageItem.GetDynamicMemberNames">
+            <see cref="T:System.Dynamic.DynamicObject"/>
+        </member>
+        <member name="M:TvheadendClient.Messages.DynamicMessageItem.TryGetMember(System.Dynamic.GetMemberBinder,System.Object@)">
+            <see cref="T:System.Dynamic.DynamicObject"/>
+        </member>
+        <member name="M:TvheadendClient.Messages.DynamicMessageItem.TrySetMember(System.Dynamic.SetMemberBinder,System.Object)">
+            <see cref="T:System.Dynamic.DynamicObject"/>
+        </member>
+        <member name="M:TvheadendClient.Messages.DynamicMessageItem.TrySetIndex(System.Dynamic.SetIndexBinder,System.Object[],System.Object)">
+            <see cref="T:System.Dynamic.DynamicObject"/>
+        </member>
+        <member name="M:TvheadendClient.Messages.DynamicMessageItem.TryGetIndex(System.Dynamic.GetIndexBinder,System.Object[],System.Object@)">
+            <see cref="T:System.Dynamic.DynamicObject"/>
+        </member>
+        <member name="M:TvheadendClient.Messages.DynamicMessageItem.Get``1(System.String,``0)">
+            <summary>
+            Get child value 
+            </summary>
+            <typeparam name="T">child type from server -  can be received only long?, string, byte[], DynamicMessageItem or array of this types</typeparam>
+            <param name="name">property name</param>
+            <param name="def">default value</param>
+            <returns></returns>
+        </member>
+        <member name="M:TvheadendClient.Messages.DynamicMessageItem.Set(System.String,System.Object)">
+            <summary>
+            Set value  - to server can be send only long?, int?, string, byte[], DynamicMessageItem or array of this types
+            </summary>
+            <param name="name">property name</param>
+            <param name="value">value</param>
+        </member>
+        <member name="T:TvheadendClient.Messages.MessageBase">
+            <summary>
+            Message bese for sending to server
+            </summary>
+        </member>
+        <member name="M:TvheadendClient.Messages.MessageBase.#ctor(System.String)">
+            <summary>
+            Create message with appropriate method
+            </summary>
+            <param name="method"></param>
+        </member>
+    </members>
+</doc>

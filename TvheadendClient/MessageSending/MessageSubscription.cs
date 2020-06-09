@@ -8,7 +8,7 @@ using TvheadendClient.Messages;
 
 namespace TvheadendClient.MessageSending
 {
-    public class MessageSubscription
+    internal class MessageSubscription
     {
         private readonly Action<MessageBase> _action;
         private readonly ILogger<MessageSubscription> _logger;

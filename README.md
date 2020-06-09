@@ -35,7 +35,9 @@ After reading all data event LoadComplete is fired.
 All data are stored on appropriate Storage in dictionary using ids.
 ```c#
 ///example reading Channels
-var allChannels = client.Data.Channels.Items.Values;
+var allChannels = client.Data.Channels.Values;
+/// read channel by id
+var channel = client.Data.Channels[id];
 ///read epgEvents for Channel
 var events = client.Data.Events.ByChannels[channelId];
 ```
@@ -45,6 +47,9 @@ When are data changed events are fired
 client.Data.Channels.ItemAdded += (sender, eventData) => { ...};
 
 ```
+
+## API
+Can be fount [here](.Doc/index.md 'index')
 
 ## TODO
 1. Improve storing data from message do data object

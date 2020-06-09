@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
+using TvheadendClient.Data.Dvr;
 using TvheadendClient.Messages;
 
 namespace TvheadendClient.Data.Implementation
@@ -7,16 +9,16 @@ namespace TvheadendClient.Data.Implementation
     {
 
         public long ChannelId { get; private set; }
-        public IChannel Channel => Data.Channels.Items?[ChannelId];
+        public IChannel Channel => Data.Channels[ChannelId];
 
         public long? EventId { get; private set; }
         public DateTime Start { get; private set; }
         public DateTime Stop { get; private set; }
 
-        public IEpgEvent Event => (EventId.HasValue && Data.Events.Items.ContainsKey(EventId.Value))?Data.Events.Items[EventId.Value]:null;
+        public IEpgEvent Event => (EventId.HasValue && Data.Events.ContainsKey(EventId.Value))?Data.Events[EventId.Value]:null;
 
         public string AutorecordId { get; private set; }
-        public IAutoRecord AutoRecord => (AutorecordId==null)?null:Data.AutoRecords.Items?[AutorecordId];
+        public IAutoRecordingEntry AutoRecordingEntry => (AutorecordId==null)?null:Data.AutoRecordings[AutorecordId];
 
         public string Description{get; private set;}
 
@@ -31,7 +33,11 @@ namespace TvheadendClient.Data.Implementation
         public bool Enabled{get;private set;}
 
         public string Comment{get;private set;}
-        
+
+        public string TimerecId { get; private set; }
+
+        public ITimeRecording TimeRecording  => (TimerecId==null)?null:Data.TimeRecordings[TimerecId];
+
 
         protected override void UpdateInternal(MessageBase d)
         {
@@ -52,7 +58,10 @@ namespace TvheadendClient.Data.Implementation
             if (enabled.HasValue)
                 Enabled = enabled.Value == 1;
             Comment = d.Get("comment", Comment);
-            
+            State = d.Get("state", State);
+            TimerecId = d.Get("timerecid", TimerecId);
+
+
         }
     }
 }

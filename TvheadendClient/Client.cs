@@ -2,6 +2,7 @@
 using System.Security.Cryptography;
 using System.Text;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Abstractions;
 using TvheadendClient.Data;
 using TvheadendClient.Data.Implementation;
 using TvheadendClient.Messages;
@@ -9,6 +10,9 @@ using TvheadendClient.MessageSending;
 
 namespace TvheadendClient
 {
+    /// <summary>
+    /// Client for connecting to tvheadend server
+    /// </summary>
     public sealed class Client : IDisposable
     {
         private readonly HtspClientSendReceiver _client;
@@ -19,9 +23,25 @@ namespace TvheadendClient
 
         private readonly ClientOptions _options;
 
+        /// <summary>
+        /// Shows if client is connected
+        /// </summary>
         public bool Connected{get; private set;}
 
+        /// <summary>
+        /// Creates new client
+        /// </summary>
+        /// <param name="options">connection options</param>
+        public Client(ClientOptions options):this(options,NullLoggerFactory.Instance)
+        {
 
+        }
+
+        /// <summary>
+        /// Creates new client
+        /// </summary>
+        /// <param name="options">connection options</param>
+        /// <param name="loggerFactory">Logger factory instance</param>
         public Client(ClientOptions options, ILoggerFactory loggerFactory)
         {
             if (options==null || string.IsNullOrEmpty(options.Host))
@@ -36,14 +56,22 @@ namespace TvheadendClient
         }
 
         private readonly TvheadendData _data;
+        /// <summary>
+        /// Data readed from server
+        /// </summary>
         public ITvheadendData Data => _data;
 
+        /// <summary>
+        /// <see cref="IDisposable"/>
+        /// </summary>
         public void Dispose()
         {
             _client?.Dispose();
         }
 
-
+        /// <summary>
+        /// Connect to server
+        /// </summary>
         public void Connect()
         {
             _client.Connect(_sender.Receive);
@@ -53,7 +81,9 @@ namespace TvheadendClient
             Connected = true;
         }
 
-
+        /// <summary>
+        /// Disconnect from server
+        /// </summary>
         public void Disconnect()
         {
             _client.Disconnect();

@@ -2,18 +2,21 @@ using System;
 
 namespace TvheadendClient.Exceptions
 {
+    /// <summary>
+    /// Exception raised when communicating with server
+    /// </summary>
     public class HtspException : Exception
     {
-        public HtspException(string message) : base(message)
+        internal HtspException(string message) : base(message)
         {
         }
 
-        public HtspException()
+        internal HtspException()
         {
 
         }
 
-        public HtspException(string message, Exception innerException) : base(message,innerException)
+        internal HtspException(string message, Exception innerException) : base(message,innerException)
         {
         }
     }

@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Linq;
 using TvheadendClient.Messages;
 
 namespace TvheadendClient.Data.Implementation
@@ -13,10 +15,12 @@ namespace TvheadendClient.Data.Implementation
         protected readonly TvheadendData TvData;
         protected readonly ConcurrentDictionary<TIdType, TDataType> data;
         protected readonly Client client;
-        public IReadOnlyDictionary<TIdType, TInterfaceType> Items { get; private set; }
+
         public event EventHandler<ItemChangeEvent<TInterfaceType>> ItemDeleted;
         public event EventHandler<ItemChangeEvent<TInterfaceType>> ItemAdded;
         public event EventHandler<ItemChangeEvent<TInterfaceType>> ItemChanged;
+
+
 
         private readonly string _createMethod;
         private readonly string _updateMethod;
@@ -30,7 +34,6 @@ namespace TvheadendClient.Data.Implementation
             _updateMethod = updateMethod;
             _deleteMethod = deleteMethod;
             this.data = new ConcurrentDictionary<TIdType, TDataType>();
-            Items = new InterfaceDictionary<TIdType, TDataType, TInterfaceType>(this.data);
         }
 
 
@@ -51,7 +54,7 @@ namespace TvheadendClient.Data.Implementation
         public void Update(MessageBase msg)
         {
             var id = ExtractId(msg);
-            if (!Items.ContainsKey(id))
+            if (!data.ContainsKey(id))
             {
                 throw new Exception("invalid id");
             }
@@ -64,7 +67,7 @@ namespace TvheadendClient.Data.Implementation
 
         public void UpdatedExternal(TIdType id)
         {
-            if (!Items.ContainsKey(id))
+            if (!data.ContainsKey(id))
             {
                 return;
             }
@@ -76,7 +79,7 @@ namespace TvheadendClient.Data.Implementation
         public void Delete(MessageBase msg)
         {
             var id = ExtractId(msg);
-            if (!Items.ContainsKey(id))
+            if (!data.ContainsKey(id))
             {
                 throw new Exception("invalid id");
             }
@@ -109,7 +112,27 @@ namespace TvheadendClient.Data.Implementation
         }
 
 
+        public IEnumerator<KeyValuePair<TIdType, TInterfaceType>> GetEnumerator() =>
+           data.Select(a => new KeyValuePair<TIdType, TInterfaceType>(a.Key, a.Value)).GetEnumerator();
+        
+        IEnumerator IEnumerable.GetEnumerator() =>
+            data.Select(a => new KeyValuePair<TIdType, TInterfaceType>(a.Key, a.Value)).GetEnumerator();
 
+        public int Count => data.Count;
+        public bool ContainsKey(TIdType key) => data.ContainsKey(key);
+
+        public bool TryGetValue(TIdType key, out TInterfaceType value)
+        {
+            var res = data.TryGetValue(key, out TDataType val);
+            value = val;
+            return res;
+        }
+
+        public TInterfaceType this[TIdType key] => data[key];
+
+
+        public IEnumerable<TIdType> Keys => data.Keys;
+        public IEnumerable<TInterfaceType> Values => data.Values.Cast<TInterfaceType>();
     }
 
 

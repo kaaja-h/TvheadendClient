@@ -9,13 +9,13 @@ using TvheadendClient.Messages;
 
 namespace TvheadendClient.Serialization
 {
-    class DynamicObjectSerializer: CollectionSerializer<DynamicObjectSerializer, DynamicMessage>
+    class DynamicObjectSerializer: CollectionSerializer<DynamicObjectSerializer, DynamicMessageItem>
     {
         public DynamicObjectSerializer(SerializerFactory serializerFactory, ILoggerFactory loggerFactory) : base(serializerFactory, loggerFactory)
         {
         }
 
-        protected override int GetLengthInner(DynamicMessage data)
+        protected override int GetLengthInner(DynamicMessageItem data)
         {
             if (data==null)
                 throw  new HtspMessageException("invalid data");
@@ -30,7 +30,7 @@ namespace TvheadendClient.Serialization
             return res;
         }
 
-        protected override void SerializeInner(DynamicMessage data, Stream s)
+        protected override void SerializeInner(DynamicMessageItem data, Stream s)
         {
             
             foreach (var item in data.Data.Keys)
@@ -50,7 +50,7 @@ namespace TvheadendClient.Serialization
             }
         }
 
-        protected override bool NeedSerializationInner(DynamicMessage data)
+        protected override bool NeedSerializationInner(DynamicMessageItem data)
         {
             return data == null;
         }
@@ -59,7 +59,7 @@ namespace TvheadendClient.Serialization
         public override object Deserialize(byte[] data, int offset, int length)
         {
             var items = ListItems(data, offset, length).ToArray();
-            var output = new DynamicMessage();
+            var output = new DynamicMessageItem();
             foreach (var item in items)
             {
                 var serializer = GetSerializer(item.Type);

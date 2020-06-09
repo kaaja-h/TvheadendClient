@@ -30,7 +30,7 @@ namespace TvheadendClient.Serialization
         public MessageBase Deserialize(int length, byte[] data)
         {
             var s = _serializerFactory.GetSerializerForType(HtspMessageItemType.Map);
-            var res = s.Deserialize(data, 0, length) as DynamicMessage;
+            var res = s.Deserialize(data, 0, length) as DynamicMessageItem;
             return new MessageBase(res);
         }
 
