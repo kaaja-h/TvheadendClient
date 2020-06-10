@@ -49,7 +49,7 @@ client.Data.Channels.ItemAdded += (sender, eventData) => { ...};
 ```
 
 ## API
-Can be fount [here](.Doc/index.md 'index')
+Can be fount [here](./Doc/index.md 'index')
 
 ## TODO
 1. Improve storing data from message do data object
