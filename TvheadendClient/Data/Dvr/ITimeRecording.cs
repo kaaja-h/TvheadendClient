@@ -30,7 +30,7 @@
         /// <summary>
         /// Days of week (can contains multiple days) 
         /// </summary>
-        /// <example><code language="c#">
+        /// <example><code language="csharp">
         /// (DaysOfWeek &amp; DaysOfWeek.Tuesday) == DaysOfWeek.Tuesday
         /// </code>
         /// </example>
