@@ -15,6 +15,8 @@ namespace TvheadendClient
             Port = 9982;
             Ipv6 = false;
             Culture = CultureInfo.GetCultureInfo("cs-CZ");
+            MessageTimeout = 30000;
+            ConnectionTimeout = 10000;
         }
 
         /// <summary>
@@ -43,10 +45,21 @@ namespace TvheadendClient
         public virtual string Password { get; set; }
 
         /// <summary>
-        /// Culture for readind data from server
+        /// Culture for reading data from server
         /// </summary>
         public virtual CultureInfo Culture { get; set; }
 
+
+        /// <summary>
+        /// Time for waiting for reply in milliseconds default 30000
+        /// </summary>
+        public int MessageTimeout { get; set; }
+
+
+        /// <summary>
+        /// Connection timeout in in milliseconds default 10000
+        /// </summary>
+        public int ConnectionTimeout { get; set; }
         
     }
 }

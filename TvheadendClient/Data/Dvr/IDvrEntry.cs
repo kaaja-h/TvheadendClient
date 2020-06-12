@@ -86,13 +86,54 @@ namespace TvheadendClient.Data.Dvr
         /// <summary>
         /// Time recording Id
         /// </summary>
-        string TimerecId { get; }
+        string TimeRecordingId { get; }
 
 
         /// <summary>
         /// Time recording
         /// </summary>
         ITimeRecording TimeRecording { get; }
+
+        /// <summary>
+        /// Extra time before start in minutes
+        /// </summary>
+        long? StartExtra { get; }
+
+        /// <summary>
+        /// Extra time after stop
+        /// </summary>
+        long? StopExtra { get; }
+
+        /// <summary>
+        /// recording retention in days
+        /// </summary>
+        long? Retention { get; }
+
+        /// <summary>
+        /// Recording priority
+        /// </summary>
+        long? Priority { get; }
+
+        /// <summary>
+        /// Content type id
+        /// </summary>
+        long? ContentTypeId { get; }
+
+        /// <summary>
+        /// Content type
+        /// </summary>
+        EpgContentType ContentType { get; }
+
+        /// <summary>
+        /// Image
+        /// </summary>
+        string Image { get; }
+
+        /// <summary>
+        /// Data size
+        /// </summary>
+        long? Datasize { get; }
+
     }
     
 }

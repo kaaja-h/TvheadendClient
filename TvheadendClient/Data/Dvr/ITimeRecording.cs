@@ -48,5 +48,20 @@
         /// </summary>
         long Retention { get; }
 
+        /// <summary>
+        /// Forced directory name
+        /// </summary>
+        string Directory { get; }
+
+        /// <summary>
+        /// DVR Configuration Name / UUID
+        /// </summary>
+        string ConfigurationId { get; }
+
+        /// <summary>
+        /// Priority
+        /// </summary>
+        long? Priority { get; }
+
     }
 }

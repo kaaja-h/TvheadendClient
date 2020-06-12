@@ -17,12 +17,12 @@ namespace TvheadendClient.Data.Implementation
             UpdateInternal(msg);
         }
 
-        public DataBase()
+        internal DataBase()
         {
 
         }
 
-        public void Update(MessageBase data)
+        internal void Update(MessageBase data)
         {
             UpdateInternal(data);
         }

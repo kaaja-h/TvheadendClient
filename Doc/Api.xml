@@ -84,7 +84,17 @@
         </member>
         <member name="P:TvheadendClient.ClientOptions.Culture">
             <summary>
-            Culture for readind data from server
+            Culture for reading data from server
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.ClientOptions.MessageTimeout">
+            <summary>
+            Time for waiting for reply in milliseconds default 30000
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.ClientOptions.ConnectionTimeout">
+            <summary>
+            Connection timeout in in milliseconds default 10000
             </summary>
         </member>
         <member name="T:TvheadendClient.Data.DaysOfWeek">
@@ -131,6 +141,103 @@
             <summary>
             Everyday
             </summary>
+        </member>
+        <member name="T:TvheadendClient.Data.Dvr.AddAutoRecordingEntryData">
+            <summary>
+            Data for adding autorecording entry
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.AddAutoRecordingEntryData.Title">
+            <summary>
+            Title for the recordings.
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.AddAutoRecordingEntryData.Enabled">
+            <summary>
+            Enabled flag 
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.AddAutoRecordingEntryData.Fulltext">
+            <summary>
+            Full text flag
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.AddAutoRecordingEntryData.Directory">
+            <summary>
+            Forced directory name - missing or empty = auto 
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.AddAutoRecordingEntryData.Name">
+            <summary>
+            Name of this autorec entry 
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.AddAutoRecordingEntryData.ConfigurationId">
+            <summary>
+            DVR Configuration Name / UUID
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.AddAutoRecordingEntryData.ChannelId">
+            <summary>
+            Channel ID
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.AddAutoRecordingEntryData.MinimalDuration">
+            <summary>
+            Minimal duration in seconds (0 = Any)
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.AddAutoRecordingEntryData.MaximalDuration">
+            <summary>
+            Maximal duration in seconds (0 = Any)
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.AddAutoRecordingEntryData.DaysOfWeek">
+            <summary>
+            Days of week 
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.AddAutoRecordingEntryData.Priority">
+            <summary>
+            Priority (0 = Important, 1 = High, 2 = Normal, 3 = Low, 4 = Unimportant, 5 = Not set).
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.AddAutoRecordingEntryData.Start">
+            <summary>
+            Minutes from midnight (up to 24*60) for the start of the time window (including)
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.AddAutoRecordingEntryData.StartWindow">
+            <summary>
+            Minutes from modnight (up to 24*60) for the end of the time window (including, cross-noon allowed)
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.AddAutoRecordingEntryData.StartExtra">
+            <summary>
+            Extra start minutes (pre-time).
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.AddAutoRecordingEntryData.StopExtra">
+            <summary>
+            Extra stop for recording stop in minutes
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.AddAutoRecordingEntryData.DuplicityDetection">
+            <summary>
+            Duplicity Detection
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.AddAutoRecordingEntryData.Comment">
+            <summary>
+            User Comment
+            </summary>
+        </member>
+        <member name="M:TvheadendClient.Data.Dvr.AddAutoRecordingEntryData.#ctor(System.String)">
+            <summary>
+            Default constructor
+            </summary>
+            <param name="title">Recording title</param>
+            <exception cref="T:System.ArgumentException">when title is invalid</exception>
         </member>
         <member name="T:TvheadendClient.Data.Dvr.AddDvrEntryData">
             <summary>
@@ -222,6 +329,86 @@
             <param name="stop">stop of recording</param>
             <param name="title">recording title</param>
         </member>
+        <member name="T:TvheadendClient.Data.Dvr.DuplicityDetection">
+            <summary>
+            Duplicity detection
+            </summary>
+        </member>
+        <member name="F:TvheadendClient.Data.Dvr.DuplicityDetection.All">
+            <summary>
+            Record All
+            </summary>
+        </member>
+        <member name="F:TvheadendClient.Data.Dvr.DuplicityDetection.UniqueGlobal">
+            <summary>
+            All: Record if EPG/XMLTV indicates it is a unique programme
+            </summary>
+        </member>
+        <member name="F:TvheadendClient.Data.Dvr.DuplicityDetection.DifferentEpisodeNumberGlobal">
+            <summary>
+            All: Record if different episode number
+            </summary>
+        </member>
+        <member name="F:TvheadendClient.Data.Dvr.DuplicityDetection.DifferentSubtitleGlobal">
+            <summary>
+            All: Record if different subtitle
+            </summary>
+        </member>
+        <member name="F:TvheadendClient.Data.Dvr.DuplicityDetection.DifferentDescriptionGlobal">
+            <summary>
+            All: Record if different description
+            </summary>
+        </member>
+        <member name="F:TvheadendClient.Data.Dvr.DuplicityDetection.RecordOncePerMonthGlobal">
+            <summary>
+            All: Record once per month
+            </summary>
+        </member>
+        <member name="F:TvheadendClient.Data.Dvr.DuplicityDetection.RecordOncePerWeekGlobal">
+            <summary>
+            All: Record once per week
+            </summary>
+        </member>
+        <member name="F:TvheadendClient.Data.Dvr.DuplicityDetection.RecordOncePerDayGlobal">
+            <summary>
+            All: Record once per day
+            </summary>
+        </member>
+        <member name="F:TvheadendClient.Data.Dvr.DuplicityDetection.DifferentEpisodeNumberLocal">
+            <summary>
+            Local: Record if different episode number
+            </summary>
+        </member>
+        <member name="F:TvheadendClient.Data.Dvr.DuplicityDetection.DifferentTitleLocal">
+            <summary>
+            Local: Record if different title
+            </summary>
+        </member>
+        <member name="F:TvheadendClient.Data.Dvr.DuplicityDetection.DifferentSubtitleLocal">
+            <summary>
+            Local: Record if different subtitle
+            </summary>
+        </member>
+        <member name="F:TvheadendClient.Data.Dvr.DuplicityDetection.DifferentDescriptionLocal">
+            <summary>
+            Local: Record if different description
+            </summary>
+        </member>
+        <member name="F:TvheadendClient.Data.Dvr.DuplicityDetection.RecordOncePerMonthLocal">
+            <summary>
+            Local: Record once per month
+            </summary>
+        </member>
+        <member name="F:TvheadendClient.Data.Dvr.DuplicityDetection.RecordOncePerWeekLocal">
+            <summary>
+            Local: Record once per week
+            </summary>
+        </member>
+        <member name="F:TvheadendClient.Data.Dvr.DuplicityDetection.RecordOncePerDayLocal">
+            <summary>
+            Local: Record once per day
+            </summary>
+        </member>
         <member name="T:TvheadendClient.Data.Dvr.IAutoRecordingEntry">
             <summary>
             Automatic recording based on epg data
@@ -255,6 +442,66 @@
         <member name="P:TvheadendClient.Data.Dvr.IAutoRecordingEntry.Fulltext">
             <summary>
             Fulltext enabled
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.IAutoRecordingEntry.Directory">
+            <summary>
+            Forced directory name
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.IAutoRecordingEntry.MinimalDuration">
+            <summary>
+            Minimal duration in seconds (0 = Any).
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.IAutoRecordingEntry.MaximalDuration">
+            <summary>
+            Maximal duration in seconds(0 = Any).
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.IAutoRecordingEntry.DaysOfWeek">
+            <summary>
+            Days of week 
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.IAutoRecordingEntry.Priority">
+            <summary>
+            Priority
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.IAutoRecordingEntry.Start">
+            <summary>
+            Minutes from midnight (up to 24*60) for the start of the time window (including) 
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.IAutoRecordingEntry.StartWindow">
+            <summary>
+            Minutes from midnight (up to 24*60) for the end of the time window (including, cross-noon allowed)
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.IAutoRecordingEntry.StartExtra">
+            <summary>
+            Extra time before start in minutes
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.IAutoRecordingEntry.StopExtra">
+            <summary>
+            Extra time after stop
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.IAutoRecordingEntry.DuplicityDetection">
+            <summary>
+            DuplicityDetection
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.IAutoRecordingEntry.Retention">
+            <summary>
+            Retention time (in days). 
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.IAutoRecordingEntry.ApproximateTime">
+            <summary>
+            Minutes from midnight (up to 24*60).
             </summary>
         </member>
         <member name="T:TvheadendClient.Data.Dvr.IAutoRecordingStorage">
@@ -357,7 +604,7 @@
             Comment
             </summary>
         </member>
-        <member name="P:TvheadendClient.Data.Dvr.IDvrEntry.TimerecId">
+        <member name="P:TvheadendClient.Data.Dvr.IDvrEntry.TimeRecordingId">
             <summary>
             Time recording Id
             </summary>
@@ -365,6 +612,46 @@
         <member name="P:TvheadendClient.Data.Dvr.IDvrEntry.TimeRecording">
             <summary>
             Time recording
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.IDvrEntry.StartExtra">
+            <summary>
+            Extra time before start in minutes
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.IDvrEntry.StopExtra">
+            <summary>
+            Extra time after stop
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.IDvrEntry.Retention">
+            <summary>
+            recording retention in days
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.IDvrEntry.Priority">
+            <summary>
+            Recording priority
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.IDvrEntry.ContentTypeId">
+            <summary>
+            Content type id
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.IDvrEntry.ContentType">
+            <summary>
+            Content type
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.IDvrEntry.Image">
+            <summary>
+            Image
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.IDvrEntry.Datasize">
+            <summary>
+            Data size
             </summary>
         </member>
         <member name="T:TvheadendClient.Data.Dvr.IDvrEntryStorage">
@@ -489,7 +776,7 @@
             <summary>
             Days of week (can contains multiple days) 
             </summary>
-            <example><code language="c#">
+            <example><code language="csharp">
             (DaysOfWeek &amp; DaysOfWeek.Tuesday) == DaysOfWeek.Tuesday
             </code>
             </example>
@@ -507,6 +794,21 @@
         <member name="P:TvheadendClient.Data.Dvr.ITimeRecording.Retention">
             <summary>
             Recording retention in days
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.ITimeRecording.Directory">
+            <summary>
+            Forced directory name
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.ITimeRecording.ConfigurationId">
+            <summary>
+            DVR Configuration Name / UUID
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.ITimeRecording.Priority">
+            <summary>
+            Priority
             </summary>
         </member>
         <member name="T:TvheadendClient.Data.Dvr.ITimeRecordingStorage">

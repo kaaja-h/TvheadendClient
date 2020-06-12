@@ -14,5 +14,12 @@ namespace TvheadendClient.Data.Implementation
             dynamic d = msg;
             return d.Id;
         }
+
+        public bool TryAddAutoRecording(AddAutoRecordingEntryData data, out long entryId)
+        {
+            var res = client.Send(data);
+            entryId = res.Get("id",0);
+            return res.Get<long?>("success") == 1;
+        }
     }
 }

@@ -34,9 +34,32 @@ namespace TvheadendClient.Data.Implementation
 
         public string Comment{get;private set;}
 
-        public string TimerecId { get; private set; }
+        public string TimeRecordingId { get; private set; }
 
-        public ITimeRecording TimeRecording  => (TimerecId==null)?null:Data.TimeRecordings[TimerecId];
+        public ITimeRecording TimeRecording  => (TimeRecordingId==null)?null:Data.TimeRecordings[TimeRecordingId];
+
+
+
+        public long? StartExtra { get; private set; }
+
+
+        public long? StopExtra { get; private set; }
+        
+        public long? Retention { get; private set; }
+
+        public long? Priority { get; private set; }
+
+        public long? ContentTypeId { get; private set; }
+
+        public EpgContentType ContentType =>
+            (ContentTypeId.HasValue && EpgContentType.DefaultContentTypes.ContainsKey(ContentTypeId.Value))
+                ? EpgContentType.DefaultContentTypes[ContentTypeId.Value]
+                : null;
+
+        public string Image { get; private set; }
+
+        public long? Datasize { get; private set; }
+
 
 
         protected override void UpdateInternal(MessageBase d)
@@ -59,9 +82,14 @@ namespace TvheadendClient.Data.Implementation
                 Enabled = enabled.Value == 1;
             Comment = d.Get("comment", Comment);
             State = d.Get("state", State);
-            TimerecId = d.Get("timerecid", TimerecId);
-
-
+            TimeRecordingId = d.Get("timerecid", TimeRecordingId);
+            StartExtra = d.Get("startExtra", StartExtra);
+            StopExtra = d.Get("stopExtra", StopExtra);
+            Retention = d.Get("retention", Retention);
+            Priority = d.Get("priority", Priority);
+            ContentTypeId = d.Get("contentType", ContentTypeId);
+            Image = d.Get("image", Image);
+            Datasize = d.Get("datasize", Datasize);
         }
     }
 }

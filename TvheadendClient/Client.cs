@@ -49,8 +49,8 @@ namespace TvheadendClient
             if (loggerFactory == null)
                 throw new ArgumentException("invalid logger factory", nameof(loggerFactory));
             _options = options;
-            _client = new HtspClientSendReceiver(options.Host, options.Port, options.Ipv6, loggerFactory);
-            _sender = new HtspMessageSender(_client, loggerFactory);
+            _client = new HtspClientSendReceiver(options.Host, options.Port, options.Ipv6, loggerFactory, options.ConnectionTimeout);
+            _sender = new HtspMessageSender(_client, loggerFactory, options.MessageTimeout);
 
             _data = new TvheadendData(loggerFactory.CreateLogger<TvheadendData>(),this);
         }

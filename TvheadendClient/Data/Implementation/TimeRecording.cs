@@ -1,4 +1,5 @@
-﻿using TvheadendClient.Data.Dvr;
+﻿using System;
+using TvheadendClient.Data.Dvr;
 using TvheadendClient.Messages;
 
 namespace TvheadendClient.Data.Implementation
@@ -14,6 +15,10 @@ namespace TvheadendClient.Data.Implementation
         public long Start { get; private set; }
         public long Stop { get; private set; }
         public long Retention { get; private set; }
+        public string Directory { get; private set; }
+        public string ConfigurationId { get; private set; }
+
+        public long? Priority { get; private set; }
 
         protected override void UpdateInternal(MessageBase data)
         {
@@ -32,7 +37,9 @@ namespace TvheadendClient.Data.Implementation
             Stop = data.Get("stop", Stop);
             Start = data.Get("start", Start);
             Retention = data.Get("retention", Retention);
-
+            Directory = data.Get("directory", Directory);
+            ConfigurationId = data.Get("configName", ConfigurationId);
+            Priority = data.Get("priority", Priority);
         }
     }
 }

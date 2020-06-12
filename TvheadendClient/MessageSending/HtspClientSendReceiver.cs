@@ -4,6 +4,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 using Microsoft.Extensions.Logging;
+using TvheadendClient.Exceptions;
 
 namespace TvheadendClient.MessageSending
 {
@@ -14,16 +15,19 @@ namespace TvheadendClient.MessageSending
         private readonly IPAddress _ipAddress;
 
         private readonly ILoggerFactory _loggerFactory;
+        private readonly ILogger<HtspClientSendReceiver> _logger;
         private readonly IPEndPoint _remoteEp;
         private readonly CancellationTokenSource _cancel = new CancellationTokenSource();
+        private readonly int _connectionTimeout;
 
-
-        public HtspClientSendReceiver(string address, int port, bool ipv6, ILoggerFactory loggerFactory)
+        public HtspClientSendReceiver(string address, int port, bool ipv6, ILoggerFactory loggerFactory, int connectionTimeout)
         {
             _ipAddress = Dns.GetHostAddresses(address).First(d =>
                 d.AddressFamily == (ipv6 ? AddressFamily.InterNetworkV6 : AddressFamily.InterNetwork));
             _remoteEp = new IPEndPoint(_ipAddress, port);
             _loggerFactory = loggerFactory;
+            _connectionTimeout = connectionTimeout;
+            _logger = _loggerFactory.CreateLogger<HtspClientSendReceiver>();
         }
 
 
@@ -41,8 +45,19 @@ namespace TvheadendClient.MessageSending
             _client = new Socket(_ipAddress.AddressFamily,
                 SocketType.Stream, ProtocolType.Tcp);
             _client.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.KeepAlive, true);
-
-            _client.Connect(_remoteEp);
+            IAsyncResult result = _client.BeginConnect(_remoteEp, null, null);
+            bool success = result.AsyncWaitHandle.WaitOne(_connectionTimeout, true);
+            if (success)
+            {
+                _client.EndConnect(result);
+            }
+            else
+            {
+                _client.Close();
+                var msg = $"connection timeout when connecting to {_remoteEp.Address} port {_remoteEp.Port}";
+                _logger.LogError(msg);
+                throw new HtspException(msg);
+            }
 
 
             StartReceiving(messageReceiveCallback);

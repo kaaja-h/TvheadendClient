@@ -17,8 +17,20 @@ namespace TvheadendClient.Data.Implementation
         public string Name {get; private set;}
 
         public bool Fulltext {get; private set;}
+        public string Directory { get; private set; }
+        public long? MinimalDuration { get; private set; }
+        public long? MaximalDuration { get; private set; }
+        public DaysOfWeek DaysOfWeek { get; private set; }
+        public long? Priority { get; private set; }
+        public long? Start { get; private set; }
+        public long? StartWindow { get; private set; }
+        public long? StartExtra { get; private set; }
+        public long? StopExtra { get; private set; }
+        public DuplicityDetection DuplicityDetection { get; private set; }
 
-        
+        public long? Retention { get; private set; }
+
+        public long? ApproximateTime { get; private set; }
 
         protected override void UpdateInternal(MessageBase d)
         {
@@ -35,6 +47,18 @@ namespace TvheadendClient.Data.Implementation
             var fulltext = d.Get<long?>("fulltext");
             if (fulltext.HasValue)
                 Fulltext = (fulltext == 1);
+            Directory = d.Get("directory", Directory);
+            MinimalDuration = d.Get("minDuration", MinimalDuration);
+            MaximalDuration = d.Get("maxDuration", MaximalDuration);
+            DaysOfWeek = (DaysOfWeek) d.Get<long?>("daysOfWeek",(long) DaysOfWeek);
+            Priority = d.Get("priority", Priority);
+            Start = d.Get("start", Start);
+            StartWindow = d.Get("startWindow", StartWindow);
+            StartExtra = d.Get("startExtra", StartExtra);
+            StopExtra = d.Get("stopExtra", StopExtra);
+            DuplicityDetection = (DuplicityDetection)d.Get<long?>("dupDetect", (long)DuplicityDetection);
+            Retention = d.Get("retentions", Retention);
+            ApproximateTime = d.Get("retentions", ApproximateTime);
         }
     }
 }

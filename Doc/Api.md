@@ -3,6 +3,25 @@
 
 ## Contents
 
+- [AddAutoRecordingEntryData](#T-TvheadendClient-Data-Dvr-AddAutoRecordingEntryData 'TvheadendClient.Data.Dvr.AddAutoRecordingEntryData')
+  - [#ctor(title)](#M-TvheadendClient-Data-Dvr-AddAutoRecordingEntryData-#ctor-System-String- 'TvheadendClient.Data.Dvr.AddAutoRecordingEntryData.#ctor(System.String)')
+  - [ChannelId](#P-TvheadendClient-Data-Dvr-AddAutoRecordingEntryData-ChannelId 'TvheadendClient.Data.Dvr.AddAutoRecordingEntryData.ChannelId')
+  - [Comment](#P-TvheadendClient-Data-Dvr-AddAutoRecordingEntryData-Comment 'TvheadendClient.Data.Dvr.AddAutoRecordingEntryData.Comment')
+  - [ConfigurationId](#P-TvheadendClient-Data-Dvr-AddAutoRecordingEntryData-ConfigurationId 'TvheadendClient.Data.Dvr.AddAutoRecordingEntryData.ConfigurationId')
+  - [DaysOfWeek](#P-TvheadendClient-Data-Dvr-AddAutoRecordingEntryData-DaysOfWeek 'TvheadendClient.Data.Dvr.AddAutoRecordingEntryData.DaysOfWeek')
+  - [Directory](#P-TvheadendClient-Data-Dvr-AddAutoRecordingEntryData-Directory 'TvheadendClient.Data.Dvr.AddAutoRecordingEntryData.Directory')
+  - [DuplicityDetection](#P-TvheadendClient-Data-Dvr-AddAutoRecordingEntryData-DuplicityDetection 'TvheadendClient.Data.Dvr.AddAutoRecordingEntryData.DuplicityDetection')
+  - [Enabled](#P-TvheadendClient-Data-Dvr-AddAutoRecordingEntryData-Enabled 'TvheadendClient.Data.Dvr.AddAutoRecordingEntryData.Enabled')
+  - [Fulltext](#P-TvheadendClient-Data-Dvr-AddAutoRecordingEntryData-Fulltext 'TvheadendClient.Data.Dvr.AddAutoRecordingEntryData.Fulltext')
+  - [MaximalDuration](#P-TvheadendClient-Data-Dvr-AddAutoRecordingEntryData-MaximalDuration 'TvheadendClient.Data.Dvr.AddAutoRecordingEntryData.MaximalDuration')
+  - [MinimalDuration](#P-TvheadendClient-Data-Dvr-AddAutoRecordingEntryData-MinimalDuration 'TvheadendClient.Data.Dvr.AddAutoRecordingEntryData.MinimalDuration')
+  - [Name](#P-TvheadendClient-Data-Dvr-AddAutoRecordingEntryData-Name 'TvheadendClient.Data.Dvr.AddAutoRecordingEntryData.Name')
+  - [Priority](#P-TvheadendClient-Data-Dvr-AddAutoRecordingEntryData-Priority 'TvheadendClient.Data.Dvr.AddAutoRecordingEntryData.Priority')
+  - [Start](#P-TvheadendClient-Data-Dvr-AddAutoRecordingEntryData-Start 'TvheadendClient.Data.Dvr.AddAutoRecordingEntryData.Start')
+  - [StartExtra](#P-TvheadendClient-Data-Dvr-AddAutoRecordingEntryData-StartExtra 'TvheadendClient.Data.Dvr.AddAutoRecordingEntryData.StartExtra')
+  - [StartWindow](#P-TvheadendClient-Data-Dvr-AddAutoRecordingEntryData-StartWindow 'TvheadendClient.Data.Dvr.AddAutoRecordingEntryData.StartWindow')
+  - [StopExtra](#P-TvheadendClient-Data-Dvr-AddAutoRecordingEntryData-StopExtra 'TvheadendClient.Data.Dvr.AddAutoRecordingEntryData.StopExtra')
+  - [Title](#P-TvheadendClient-Data-Dvr-AddAutoRecordingEntryData-Title 'TvheadendClient.Data.Dvr.AddAutoRecordingEntryData.Title')
 - [AddDvrEntryData](#T-TvheadendClient-Data-Dvr-AddDvrEntryData 'TvheadendClient.Data.Dvr.AddDvrEntryData')
   - [#ctor(eventId)](#M-TvheadendClient-Data-Dvr-AddDvrEntryData-#ctor-System-Int64- 'TvheadendClient.Data.Dvr.AddDvrEntryData.#ctor(System.Int64)')
   - [#ctor(channelId,start,stop,title)](#M-TvheadendClient-Data-Dvr-AddDvrEntryData-#ctor-System-Int64,System-DateTime,System-DateTime,System-String- 'TvheadendClient.Data.Dvr.AddDvrEntryData.#ctor(System.Int64,System.DateTime,System.DateTime,System.String)')
@@ -29,9 +48,11 @@
   - [Dispose()](#M-TvheadendClient-Client-Dispose 'TvheadendClient.Client.Dispose')
 - [ClientOptions](#T-TvheadendClient-ClientOptions 'TvheadendClient.ClientOptions')
   - [#ctor()](#M-TvheadendClient-ClientOptions-#ctor 'TvheadendClient.ClientOptions.#ctor')
+  - [ConnectionTimeout](#P-TvheadendClient-ClientOptions-ConnectionTimeout 'TvheadendClient.ClientOptions.ConnectionTimeout')
   - [Culture](#P-TvheadendClient-ClientOptions-Culture 'TvheadendClient.ClientOptions.Culture')
   - [Host](#P-TvheadendClient-ClientOptions-Host 'TvheadendClient.ClientOptions.Host')
   - [Ipv6](#P-TvheadendClient-ClientOptions-Ipv6 'TvheadendClient.ClientOptions.Ipv6')
+  - [MessageTimeout](#P-TvheadendClient-ClientOptions-MessageTimeout 'TvheadendClient.ClientOptions.MessageTimeout')
   - [Password](#P-TvheadendClient-ClientOptions-Password 'TvheadendClient.ClientOptions.Password')
   - [Port](#P-TvheadendClient-ClientOptions-Port 'TvheadendClient.ClientOptions.Port')
   - [UserName](#P-TvheadendClient-ClientOptions-UserName 'TvheadendClient.ClientOptions.UserName')
@@ -44,6 +65,22 @@
   - [Thursday](#F-TvheadendClient-Data-DaysOfWeek-Thursday 'TvheadendClient.Data.DaysOfWeek.Thursday')
   - [Tuesday](#F-TvheadendClient-Data-DaysOfWeek-Tuesday 'TvheadendClient.Data.DaysOfWeek.Tuesday')
   - [Wednesday](#F-TvheadendClient-Data-DaysOfWeek-Wednesday 'TvheadendClient.Data.DaysOfWeek.Wednesday')
+- [DuplicityDetection](#T-TvheadendClient-Data-Dvr-DuplicityDetection 'TvheadendClient.Data.Dvr.DuplicityDetection')
+  - [All](#F-TvheadendClient-Data-Dvr-DuplicityDetection-All 'TvheadendClient.Data.Dvr.DuplicityDetection.All')
+  - [DifferentDescriptionGlobal](#F-TvheadendClient-Data-Dvr-DuplicityDetection-DifferentDescriptionGlobal 'TvheadendClient.Data.Dvr.DuplicityDetection.DifferentDescriptionGlobal')
+  - [DifferentDescriptionLocal](#F-TvheadendClient-Data-Dvr-DuplicityDetection-DifferentDescriptionLocal 'TvheadendClient.Data.Dvr.DuplicityDetection.DifferentDescriptionLocal')
+  - [DifferentEpisodeNumberGlobal](#F-TvheadendClient-Data-Dvr-DuplicityDetection-DifferentEpisodeNumberGlobal 'TvheadendClient.Data.Dvr.DuplicityDetection.DifferentEpisodeNumberGlobal')
+  - [DifferentEpisodeNumberLocal](#F-TvheadendClient-Data-Dvr-DuplicityDetection-DifferentEpisodeNumberLocal 'TvheadendClient.Data.Dvr.DuplicityDetection.DifferentEpisodeNumberLocal')
+  - [DifferentSubtitleGlobal](#F-TvheadendClient-Data-Dvr-DuplicityDetection-DifferentSubtitleGlobal 'TvheadendClient.Data.Dvr.DuplicityDetection.DifferentSubtitleGlobal')
+  - [DifferentSubtitleLocal](#F-TvheadendClient-Data-Dvr-DuplicityDetection-DifferentSubtitleLocal 'TvheadendClient.Data.Dvr.DuplicityDetection.DifferentSubtitleLocal')
+  - [DifferentTitleLocal](#F-TvheadendClient-Data-Dvr-DuplicityDetection-DifferentTitleLocal 'TvheadendClient.Data.Dvr.DuplicityDetection.DifferentTitleLocal')
+  - [RecordOncePerDayGlobal](#F-TvheadendClient-Data-Dvr-DuplicityDetection-RecordOncePerDayGlobal 'TvheadendClient.Data.Dvr.DuplicityDetection.RecordOncePerDayGlobal')
+  - [RecordOncePerDayLocal](#F-TvheadendClient-Data-Dvr-DuplicityDetection-RecordOncePerDayLocal 'TvheadendClient.Data.Dvr.DuplicityDetection.RecordOncePerDayLocal')
+  - [RecordOncePerMonthGlobal](#F-TvheadendClient-Data-Dvr-DuplicityDetection-RecordOncePerMonthGlobal 'TvheadendClient.Data.Dvr.DuplicityDetection.RecordOncePerMonthGlobal')
+  - [RecordOncePerMonthLocal](#F-TvheadendClient-Data-Dvr-DuplicityDetection-RecordOncePerMonthLocal 'TvheadendClient.Data.Dvr.DuplicityDetection.RecordOncePerMonthLocal')
+  - [RecordOncePerWeekGlobal](#F-TvheadendClient-Data-Dvr-DuplicityDetection-RecordOncePerWeekGlobal 'TvheadendClient.Data.Dvr.DuplicityDetection.RecordOncePerWeekGlobal')
+  - [RecordOncePerWeekLocal](#F-TvheadendClient-Data-Dvr-DuplicityDetection-RecordOncePerWeekLocal 'TvheadendClient.Data.Dvr.DuplicityDetection.RecordOncePerWeekLocal')
+  - [UniqueGlobal](#F-TvheadendClient-Data-Dvr-DuplicityDetection-UniqueGlobal 'TvheadendClient.Data.Dvr.DuplicityDetection.UniqueGlobal')
 - [DynamicMessageItem](#T-TvheadendClient-Messages-DynamicMessageItem 'TvheadendClient.Messages.DynamicMessageItem')
   - [GetDynamicMemberNames()](#M-TvheadendClient-Messages-DynamicMessageItem-GetDynamicMemberNames 'TvheadendClient.Messages.DynamicMessageItem.GetDynamicMemberNames')
   - [Get\`\`1(name,def)](#M-TvheadendClient-Messages-DynamicMessageItem-Get``1-System-String,``0- 'TvheadendClient.Messages.DynamicMessageItem.Get``1(System.String,``0)')
@@ -63,11 +100,23 @@
 - [HtspException](#T-TvheadendClient-Exceptions-HtspException 'TvheadendClient.Exceptions.HtspException')
 - [HtspMessageException](#T-TvheadendClient-Exceptions-HtspMessageException 'TvheadendClient.Exceptions.HtspMessageException')
 - [IAutoRecordingEntry](#T-TvheadendClient-Data-Dvr-IAutoRecordingEntry 'TvheadendClient.Data.Dvr.IAutoRecordingEntry')
+  - [ApproximateTime](#P-TvheadendClient-Data-Dvr-IAutoRecordingEntry-ApproximateTime 'TvheadendClient.Data.Dvr.IAutoRecordingEntry.ApproximateTime')
   - [Channel](#P-TvheadendClient-Data-Dvr-IAutoRecordingEntry-Channel 'TvheadendClient.Data.Dvr.IAutoRecordingEntry.Channel')
   - [ChannelId](#P-TvheadendClient-Data-Dvr-IAutoRecordingEntry-ChannelId 'TvheadendClient.Data.Dvr.IAutoRecordingEntry.ChannelId')
+  - [DaysOfWeek](#P-TvheadendClient-Data-Dvr-IAutoRecordingEntry-DaysOfWeek 'TvheadendClient.Data.Dvr.IAutoRecordingEntry.DaysOfWeek')
+  - [Directory](#P-TvheadendClient-Data-Dvr-IAutoRecordingEntry-Directory 'TvheadendClient.Data.Dvr.IAutoRecordingEntry.Directory')
+  - [DuplicityDetection](#P-TvheadendClient-Data-Dvr-IAutoRecordingEntry-DuplicityDetection 'TvheadendClient.Data.Dvr.IAutoRecordingEntry.DuplicityDetection')
   - [Enabled](#P-TvheadendClient-Data-Dvr-IAutoRecordingEntry-Enabled 'TvheadendClient.Data.Dvr.IAutoRecordingEntry.Enabled')
   - [Fulltext](#P-TvheadendClient-Data-Dvr-IAutoRecordingEntry-Fulltext 'TvheadendClient.Data.Dvr.IAutoRecordingEntry.Fulltext')
+  - [MaximalDuration](#P-TvheadendClient-Data-Dvr-IAutoRecordingEntry-MaximalDuration 'TvheadendClient.Data.Dvr.IAutoRecordingEntry.MaximalDuration')
+  - [MinimalDuration](#P-TvheadendClient-Data-Dvr-IAutoRecordingEntry-MinimalDuration 'TvheadendClient.Data.Dvr.IAutoRecordingEntry.MinimalDuration')
   - [Name](#P-TvheadendClient-Data-Dvr-IAutoRecordingEntry-Name 'TvheadendClient.Data.Dvr.IAutoRecordingEntry.Name')
+  - [Priority](#P-TvheadendClient-Data-Dvr-IAutoRecordingEntry-Priority 'TvheadendClient.Data.Dvr.IAutoRecordingEntry.Priority')
+  - [Retention](#P-TvheadendClient-Data-Dvr-IAutoRecordingEntry-Retention 'TvheadendClient.Data.Dvr.IAutoRecordingEntry.Retention')
+  - [Start](#P-TvheadendClient-Data-Dvr-IAutoRecordingEntry-Start 'TvheadendClient.Data.Dvr.IAutoRecordingEntry.Start')
+  - [StartExtra](#P-TvheadendClient-Data-Dvr-IAutoRecordingEntry-StartExtra 'TvheadendClient.Data.Dvr.IAutoRecordingEntry.StartExtra')
+  - [StartWindow](#P-TvheadendClient-Data-Dvr-IAutoRecordingEntry-StartWindow 'TvheadendClient.Data.Dvr.IAutoRecordingEntry.StartWindow')
+  - [StopExtra](#P-TvheadendClient-Data-Dvr-IAutoRecordingEntry-StopExtra 'TvheadendClient.Data.Dvr.IAutoRecordingEntry.StopExtra')
   - [Title](#P-TvheadendClient-Data-Dvr-IAutoRecordingEntry-Title 'TvheadendClient.Data.Dvr.IAutoRecordingEntry.Title')
 - [IAutoRecordingStorage](#T-TvheadendClient-Data-Dvr-IAutoRecordingStorage 'TvheadendClient.Data.Dvr.IAutoRecordingStorage')
 - [IChannel](#T-TvheadendClient-Data-IChannel 'TvheadendClient.Data.IChannel')
@@ -91,17 +140,25 @@
   - [Channel](#P-TvheadendClient-Data-Dvr-IDvrEntry-Channel 'TvheadendClient.Data.Dvr.IDvrEntry.Channel')
   - [ChannelId](#P-TvheadendClient-Data-Dvr-IDvrEntry-ChannelId 'TvheadendClient.Data.Dvr.IDvrEntry.ChannelId')
   - [Comment](#P-TvheadendClient-Data-Dvr-IDvrEntry-Comment 'TvheadendClient.Data.Dvr.IDvrEntry.Comment')
+  - [ContentType](#P-TvheadendClient-Data-Dvr-IDvrEntry-ContentType 'TvheadendClient.Data.Dvr.IDvrEntry.ContentType')
+  - [ContentTypeId](#P-TvheadendClient-Data-Dvr-IDvrEntry-ContentTypeId 'TvheadendClient.Data.Dvr.IDvrEntry.ContentTypeId')
+  - [Datasize](#P-TvheadendClient-Data-Dvr-IDvrEntry-Datasize 'TvheadendClient.Data.Dvr.IDvrEntry.Datasize')
   - [Description](#P-TvheadendClient-Data-Dvr-IDvrEntry-Description 'TvheadendClient.Data.Dvr.IDvrEntry.Description')
   - [Enabled](#P-TvheadendClient-Data-Dvr-IDvrEntry-Enabled 'TvheadendClient.Data.Dvr.IDvrEntry.Enabled')
   - [Event](#P-TvheadendClient-Data-Dvr-IDvrEntry-Event 'TvheadendClient.Data.Dvr.IDvrEntry.Event')
   - [EventId](#P-TvheadendClient-Data-Dvr-IDvrEntry-EventId 'TvheadendClient.Data.Dvr.IDvrEntry.EventId')
+  - [Image](#P-TvheadendClient-Data-Dvr-IDvrEntry-Image 'TvheadendClient.Data.Dvr.IDvrEntry.Image')
+  - [Priority](#P-TvheadendClient-Data-Dvr-IDvrEntry-Priority 'TvheadendClient.Data.Dvr.IDvrEntry.Priority')
+  - [Retention](#P-TvheadendClient-Data-Dvr-IDvrEntry-Retention 'TvheadendClient.Data.Dvr.IDvrEntry.Retention')
   - [Start](#P-TvheadendClient-Data-Dvr-IDvrEntry-Start 'TvheadendClient.Data.Dvr.IDvrEntry.Start')
+  - [StartExtra](#P-TvheadendClient-Data-Dvr-IDvrEntry-StartExtra 'TvheadendClient.Data.Dvr.IDvrEntry.StartExtra')
   - [State](#P-TvheadendClient-Data-Dvr-IDvrEntry-State 'TvheadendClient.Data.Dvr.IDvrEntry.State')
   - [Stop](#P-TvheadendClient-Data-Dvr-IDvrEntry-Stop 'TvheadendClient.Data.Dvr.IDvrEntry.Stop')
+  - [StopExtra](#P-TvheadendClient-Data-Dvr-IDvrEntry-StopExtra 'TvheadendClient.Data.Dvr.IDvrEntry.StopExtra')
   - [Subtitle](#P-TvheadendClient-Data-Dvr-IDvrEntry-Subtitle 'TvheadendClient.Data.Dvr.IDvrEntry.Subtitle')
   - [Summary](#P-TvheadendClient-Data-Dvr-IDvrEntry-Summary 'TvheadendClient.Data.Dvr.IDvrEntry.Summary')
   - [TimeRecording](#P-TvheadendClient-Data-Dvr-IDvrEntry-TimeRecording 'TvheadendClient.Data.Dvr.IDvrEntry.TimeRecording')
-  - [TimerecId](#P-TvheadendClient-Data-Dvr-IDvrEntry-TimerecId 'TvheadendClient.Data.Dvr.IDvrEntry.TimerecId')
+  - [TimeRecordingId](#P-TvheadendClient-Data-Dvr-IDvrEntry-TimeRecordingId 'TvheadendClient.Data.Dvr.IDvrEntry.TimeRecordingId')
   - [Title](#P-TvheadendClient-Data-Dvr-IDvrEntry-Title 'TvheadendClient.Data.Dvr.IDvrEntry.Title')
 - [IDvrEntryStorage](#T-TvheadendClient-Data-Dvr-IDvrEntryStorage 'TvheadendClient.Data.Dvr.IDvrEntryStorage')
   - [ByChannel](#P-TvheadendClient-Data-Dvr-IDvrEntryStorage-ByChannel 'TvheadendClient.Data.Dvr.IDvrEntryStorage.ByChannel')
@@ -138,9 +195,12 @@
 - [ITimeRecording](#T-TvheadendClient-Data-Dvr-ITimeRecording 'TvheadendClient.Data.Dvr.ITimeRecording')
   - [Channel](#P-TvheadendClient-Data-Dvr-ITimeRecording-Channel 'TvheadendClient.Data.Dvr.ITimeRecording.Channel')
   - [ChannelId](#P-TvheadendClient-Data-Dvr-ITimeRecording-ChannelId 'TvheadendClient.Data.Dvr.ITimeRecording.ChannelId')
+  - [ConfigurationId](#P-TvheadendClient-Data-Dvr-ITimeRecording-ConfigurationId 'TvheadendClient.Data.Dvr.ITimeRecording.ConfigurationId')
   - [DaysOfWeek](#P-TvheadendClient-Data-Dvr-ITimeRecording-DaysOfWeek 'TvheadendClient.Data.Dvr.ITimeRecording.DaysOfWeek')
+  - [Directory](#P-TvheadendClient-Data-Dvr-ITimeRecording-Directory 'TvheadendClient.Data.Dvr.ITimeRecording.Directory')
   - [Enabled](#P-TvheadendClient-Data-Dvr-ITimeRecording-Enabled 'TvheadendClient.Data.Dvr.ITimeRecording.Enabled')
   - [Name](#P-TvheadendClient-Data-Dvr-ITimeRecording-Name 'TvheadendClient.Data.Dvr.ITimeRecording.Name')
+  - [Priority](#P-TvheadendClient-Data-Dvr-ITimeRecording-Priority 'TvheadendClient.Data.Dvr.ITimeRecording.Priority')
   - [Retention](#P-TvheadendClient-Data-Dvr-ITimeRecording-Retention 'TvheadendClient.Data.Dvr.ITimeRecording.Retention')
   - [Start](#P-TvheadendClient-Data-Dvr-ITimeRecording-Start 'TvheadendClient.Data.Dvr.ITimeRecording.Start')
   - [Stop](#P-TvheadendClient-Data-Dvr-ITimeRecording-Stop 'TvheadendClient.Data.Dvr.ITimeRecording.Stop')
@@ -173,6 +233,155 @@
   - [StopExtra](#P-TvheadendClient-Data-Dvr-UpdateDvrEntryData-StopExtra 'TvheadendClient.Data.Dvr.UpdateDvrEntryData.StopExtra')
   - [Subtitle](#P-TvheadendClient-Data-Dvr-UpdateDvrEntryData-Subtitle 'TvheadendClient.Data.Dvr.UpdateDvrEntryData.Subtitle')
   - [Title](#P-TvheadendClient-Data-Dvr-UpdateDvrEntryData-Title 'TvheadendClient.Data.Dvr.UpdateDvrEntryData.Title')
+
+<a name='T-TvheadendClient-Data-Dvr-AddAutoRecordingEntryData'></a>
+## AddAutoRecordingEntryData `type`
+
+##### Namespace
+
+TvheadendClient.Data.Dvr
+
+##### Summary
+
+Data for adding autorecording entry
+
+<a name='M-TvheadendClient-Data-Dvr-AddAutoRecordingEntryData-#ctor-System-String-'></a>
+### #ctor(title) `constructor`
+
+##### Summary
+
+Default constructor
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| title | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Recording title |
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | when title is invalid |
+
+<a name='P-TvheadendClient-Data-Dvr-AddAutoRecordingEntryData-ChannelId'></a>
+### ChannelId `property`
+
+##### Summary
+
+Channel ID
+
+<a name='P-TvheadendClient-Data-Dvr-AddAutoRecordingEntryData-Comment'></a>
+### Comment `property`
+
+##### Summary
+
+User Comment
+
+<a name='P-TvheadendClient-Data-Dvr-AddAutoRecordingEntryData-ConfigurationId'></a>
+### ConfigurationId `property`
+
+##### Summary
+
+DVR Configuration Name / UUID
+
+<a name='P-TvheadendClient-Data-Dvr-AddAutoRecordingEntryData-DaysOfWeek'></a>
+### DaysOfWeek `property`
+
+##### Summary
+
+Days of week
+
+<a name='P-TvheadendClient-Data-Dvr-AddAutoRecordingEntryData-Directory'></a>
+### Directory `property`
+
+##### Summary
+
+Forced directory name - missing or empty = auto
+
+<a name='P-TvheadendClient-Data-Dvr-AddAutoRecordingEntryData-DuplicityDetection'></a>
+### DuplicityDetection `property`
+
+##### Summary
+
+Duplicity Detection
+
+<a name='P-TvheadendClient-Data-Dvr-AddAutoRecordingEntryData-Enabled'></a>
+### Enabled `property`
+
+##### Summary
+
+Enabled flag
+
+<a name='P-TvheadendClient-Data-Dvr-AddAutoRecordingEntryData-Fulltext'></a>
+### Fulltext `property`
+
+##### Summary
+
+Full text flag
+
+<a name='P-TvheadendClient-Data-Dvr-AddAutoRecordingEntryData-MaximalDuration'></a>
+### MaximalDuration `property`
+
+##### Summary
+
+Maximal duration in seconds (0 = Any)
+
+<a name='P-TvheadendClient-Data-Dvr-AddAutoRecordingEntryData-MinimalDuration'></a>
+### MinimalDuration `property`
+
+##### Summary
+
+Minimal duration in seconds (0 = Any)
+
+<a name='P-TvheadendClient-Data-Dvr-AddAutoRecordingEntryData-Name'></a>
+### Name `property`
+
+##### Summary
+
+Name of this autorec entry
+
+<a name='P-TvheadendClient-Data-Dvr-AddAutoRecordingEntryData-Priority'></a>
+### Priority `property`
+
+##### Summary
+
+Priority (0 = Important, 1 = High, 2 = Normal, 3 = Low, 4 = Unimportant, 5 = Not set).
+
+<a name='P-TvheadendClient-Data-Dvr-AddAutoRecordingEntryData-Start'></a>
+### Start `property`
+
+##### Summary
+
+Minutes from midnight (up to 24*60) for the start of the time window (including)
+
+<a name='P-TvheadendClient-Data-Dvr-AddAutoRecordingEntryData-StartExtra'></a>
+### StartExtra `property`
+
+##### Summary
+
+Extra start minutes (pre-time).
+
+<a name='P-TvheadendClient-Data-Dvr-AddAutoRecordingEntryData-StartWindow'></a>
+### StartWindow `property`
+
+##### Summary
+
+Minutes from modnight (up to 24*60) for the end of the time window (including, cross-noon allowed)
+
+<a name='P-TvheadendClient-Data-Dvr-AddAutoRecordingEntryData-StopExtra'></a>
+### StopExtra `property`
+
+##### Summary
+
+Extra stop for recording stop in minutes
+
+<a name='P-TvheadendClient-Data-Dvr-AddAutoRecordingEntryData-Title'></a>
+### Title `property`
+
+##### Summary
+
+Title for the recordings.
 
 <a name='T-TvheadendClient-Data-Dvr-AddDvrEntryData'></a>
 ## AddDvrEntryData `type`
@@ -427,12 +636,19 @@ Default constructor
 
 This constructor has no parameters.
 
+<a name='P-TvheadendClient-ClientOptions-ConnectionTimeout'></a>
+### ConnectionTimeout `property`
+
+##### Summary
+
+Connection timeout in in milliseconds default 10000
+
 <a name='P-TvheadendClient-ClientOptions-Culture'></a>
 ### Culture `property`
 
 ##### Summary
 
-Culture for readind data from server
+Culture for reading data from server
 
 <a name='P-TvheadendClient-ClientOptions-Host'></a>
 ### Host `property`
@@ -447,6 +663,13 @@ Host - required
 ##### Summary
 
 Flag to use ipv6 instead ipv4
+
+<a name='P-TvheadendClient-ClientOptions-MessageTimeout'></a>
+### MessageTimeout `property`
+
+##### Summary
+
+Time for waiting for reply in milliseconds default 30000
 
 <a name='P-TvheadendClient-ClientOptions-Password'></a>
 ### Password `property`
@@ -535,6 +758,122 @@ Tuesday
 ##### Summary
 
 Wednesday
+
+<a name='T-TvheadendClient-Data-Dvr-DuplicityDetection'></a>
+## DuplicityDetection `type`
+
+##### Namespace
+
+TvheadendClient.Data.Dvr
+
+##### Summary
+
+Duplicity detection
+
+<a name='F-TvheadendClient-Data-Dvr-DuplicityDetection-All'></a>
+### All `constants`
+
+##### Summary
+
+Record All
+
+<a name='F-TvheadendClient-Data-Dvr-DuplicityDetection-DifferentDescriptionGlobal'></a>
+### DifferentDescriptionGlobal `constants`
+
+##### Summary
+
+All: Record if different description
+
+<a name='F-TvheadendClient-Data-Dvr-DuplicityDetection-DifferentDescriptionLocal'></a>
+### DifferentDescriptionLocal `constants`
+
+##### Summary
+
+Local: Record if different description
+
+<a name='F-TvheadendClient-Data-Dvr-DuplicityDetection-DifferentEpisodeNumberGlobal'></a>
+### DifferentEpisodeNumberGlobal `constants`
+
+##### Summary
+
+All: Record if different episode number
+
+<a name='F-TvheadendClient-Data-Dvr-DuplicityDetection-DifferentEpisodeNumberLocal'></a>
+### DifferentEpisodeNumberLocal `constants`
+
+##### Summary
+
+Local: Record if different episode number
+
+<a name='F-TvheadendClient-Data-Dvr-DuplicityDetection-DifferentSubtitleGlobal'></a>
+### DifferentSubtitleGlobal `constants`
+
+##### Summary
+
+All: Record if different subtitle
+
+<a name='F-TvheadendClient-Data-Dvr-DuplicityDetection-DifferentSubtitleLocal'></a>
+### DifferentSubtitleLocal `constants`
+
+##### Summary
+
+Local: Record if different subtitle
+
+<a name='F-TvheadendClient-Data-Dvr-DuplicityDetection-DifferentTitleLocal'></a>
+### DifferentTitleLocal `constants`
+
+##### Summary
+
+Local: Record if different title
+
+<a name='F-TvheadendClient-Data-Dvr-DuplicityDetection-RecordOncePerDayGlobal'></a>
+### RecordOncePerDayGlobal `constants`
+
+##### Summary
+
+All: Record once per day
+
+<a name='F-TvheadendClient-Data-Dvr-DuplicityDetection-RecordOncePerDayLocal'></a>
+### RecordOncePerDayLocal `constants`
+
+##### Summary
+
+Local: Record once per day
+
+<a name='F-TvheadendClient-Data-Dvr-DuplicityDetection-RecordOncePerMonthGlobal'></a>
+### RecordOncePerMonthGlobal `constants`
+
+##### Summary
+
+All: Record once per month
+
+<a name='F-TvheadendClient-Data-Dvr-DuplicityDetection-RecordOncePerMonthLocal'></a>
+### RecordOncePerMonthLocal `constants`
+
+##### Summary
+
+Local: Record once per month
+
+<a name='F-TvheadendClient-Data-Dvr-DuplicityDetection-RecordOncePerWeekGlobal'></a>
+### RecordOncePerWeekGlobal `constants`
+
+##### Summary
+
+All: Record once per week
+
+<a name='F-TvheadendClient-Data-Dvr-DuplicityDetection-RecordOncePerWeekLocal'></a>
+### RecordOncePerWeekLocal `constants`
+
+##### Summary
+
+Local: Record once per week
+
+<a name='F-TvheadendClient-Data-Dvr-DuplicityDetection-UniqueGlobal'></a>
+### UniqueGlobal `constants`
+
+##### Summary
+
+All: Record if EPG/XMLTV indicates it is a unique programme
 
 <a name='T-TvheadendClient-Messages-DynamicMessageItem'></a>
 ## DynamicMessageItem `type`
@@ -713,6 +1052,13 @@ TvheadendClient.Data.Dvr
 
 Automatic recording based on epg data
 
+<a name='P-TvheadendClient-Data-Dvr-IAutoRecordingEntry-ApproximateTime'></a>
+### ApproximateTime `property`
+
+##### Summary
+
+Minutes from midnight (up to 24*60).
+
 <a name='P-TvheadendClient-Data-Dvr-IAutoRecordingEntry-Channel'></a>
 ### Channel `property`
 
@@ -726,6 +1072,27 @@ Channel
 ##### Summary
 
 Channel id
+
+<a name='P-TvheadendClient-Data-Dvr-IAutoRecordingEntry-DaysOfWeek'></a>
+### DaysOfWeek `property`
+
+##### Summary
+
+Days of week
+
+<a name='P-TvheadendClient-Data-Dvr-IAutoRecordingEntry-Directory'></a>
+### Directory `property`
+
+##### Summary
+
+Forced directory name
+
+<a name='P-TvheadendClient-Data-Dvr-IAutoRecordingEntry-DuplicityDetection'></a>
+### DuplicityDetection `property`
+
+##### Summary
+
+DuplicityDetection
 
 <a name='P-TvheadendClient-Data-Dvr-IAutoRecordingEntry-Enabled'></a>
 ### Enabled `property`
@@ -741,12 +1108,68 @@ Enabled
 
 Fulltext enabled
 
+<a name='P-TvheadendClient-Data-Dvr-IAutoRecordingEntry-MaximalDuration'></a>
+### MaximalDuration `property`
+
+##### Summary
+
+Maximal duration in seconds(0 = Any).
+
+<a name='P-TvheadendClient-Data-Dvr-IAutoRecordingEntry-MinimalDuration'></a>
+### MinimalDuration `property`
+
+##### Summary
+
+Minimal duration in seconds (0 = Any).
+
 <a name='P-TvheadendClient-Data-Dvr-IAutoRecordingEntry-Name'></a>
 ### Name `property`
 
 ##### Summary
 
 Autorecording name
+
+<a name='P-TvheadendClient-Data-Dvr-IAutoRecordingEntry-Priority'></a>
+### Priority `property`
+
+##### Summary
+
+Priority
+
+<a name='P-TvheadendClient-Data-Dvr-IAutoRecordingEntry-Retention'></a>
+### Retention `property`
+
+##### Summary
+
+Retention time (in days).
+
+<a name='P-TvheadendClient-Data-Dvr-IAutoRecordingEntry-Start'></a>
+### Start `property`
+
+##### Summary
+
+Minutes from midnight (up to 24*60) for the start of the time window (including)
+
+<a name='P-TvheadendClient-Data-Dvr-IAutoRecordingEntry-StartExtra'></a>
+### StartExtra `property`
+
+##### Summary
+
+Extra time before start in minutes
+
+<a name='P-TvheadendClient-Data-Dvr-IAutoRecordingEntry-StartWindow'></a>
+### StartWindow `property`
+
+##### Summary
+
+Minutes from midnight (up to 24*60) for the end of the time window (including, cross-noon allowed)
+
+<a name='P-TvheadendClient-Data-Dvr-IAutoRecordingEntry-StopExtra'></a>
+### StopExtra `property`
+
+##### Summary
+
+Extra time after stop
 
 <a name='P-TvheadendClient-Data-Dvr-IAutoRecordingEntry-Title'></a>
 ### Title `property`
@@ -943,6 +1366,27 @@ ChannelId
 
 Comment
 
+<a name='P-TvheadendClient-Data-Dvr-IDvrEntry-ContentType'></a>
+### ContentType `property`
+
+##### Summary
+
+Content type
+
+<a name='P-TvheadendClient-Data-Dvr-IDvrEntry-ContentTypeId'></a>
+### ContentTypeId `property`
+
+##### Summary
+
+Content type id
+
+<a name='P-TvheadendClient-Data-Dvr-IDvrEntry-Datasize'></a>
+### Datasize `property`
+
+##### Summary
+
+Data size
+
 <a name='P-TvheadendClient-Data-Dvr-IDvrEntry-Description'></a>
 ### Description `property`
 
@@ -971,12 +1415,40 @@ Event
 
 EventId
 
+<a name='P-TvheadendClient-Data-Dvr-IDvrEntry-Image'></a>
+### Image `property`
+
+##### Summary
+
+Image
+
+<a name='P-TvheadendClient-Data-Dvr-IDvrEntry-Priority'></a>
+### Priority `property`
+
+##### Summary
+
+Recording priority
+
+<a name='P-TvheadendClient-Data-Dvr-IDvrEntry-Retention'></a>
+### Retention `property`
+
+##### Summary
+
+recording retention in days
+
 <a name='P-TvheadendClient-Data-Dvr-IDvrEntry-Start'></a>
 ### Start `property`
 
 ##### Summary
 
 Start
+
+<a name='P-TvheadendClient-Data-Dvr-IDvrEntry-StartExtra'></a>
+### StartExtra `property`
+
+##### Summary
+
+Extra time before start in minutes
 
 <a name='P-TvheadendClient-Data-Dvr-IDvrEntry-State'></a>
 ### State `property`
@@ -991,6 +1463,13 @@ State
 ##### Summary
 
 Stop
+
+<a name='P-TvheadendClient-Data-Dvr-IDvrEntry-StopExtra'></a>
+### StopExtra `property`
+
+##### Summary
+
+Extra time after stop
 
 <a name='P-TvheadendClient-Data-Dvr-IDvrEntry-Subtitle'></a>
 ### Subtitle `property`
@@ -1013,8 +1492,8 @@ Summary
 
 Time recording
 
-<a name='P-TvheadendClient-Data-Dvr-IDvrEntry-TimerecId'></a>
-### TimerecId `property`
+<a name='P-TvheadendClient-Data-Dvr-IDvrEntry-TimeRecordingId'></a>
+### TimeRecordingId `property`
 
 ##### Summary
 
@@ -1410,6 +1889,13 @@ Channel
 
 Channel Id
 
+<a name='P-TvheadendClient-Data-Dvr-ITimeRecording-ConfigurationId'></a>
+### ConfigurationId `property`
+
+##### Summary
+
+DVR Configuration Name / UUID
+
 <a name='P-TvheadendClient-Data-Dvr-ITimeRecording-DaysOfWeek'></a>
 ### DaysOfWeek `property`
 
@@ -1422,6 +1908,13 @@ Days of week (can contains multiple days)
 ```
 (DaysOfWeek &amp; DaysOfWeek.Tuesday) == DaysOfWeek.Tuesday
 ```
+
+<a name='P-TvheadendClient-Data-Dvr-ITimeRecording-Directory'></a>
+### Directory `property`
+
+##### Summary
+
+Forced directory name
 
 <a name='P-TvheadendClient-Data-Dvr-ITimeRecording-Enabled'></a>
 ### Enabled `property`
@@ -1436,6 +1929,13 @@ Enabled
 ##### Summary
 
 Time recording name
+
+<a name='P-TvheadendClient-Data-Dvr-ITimeRecording-Priority'></a>
+### Priority `property`
+
+##### Summary
+
+Priority
 
 <a name='P-TvheadendClient-Data-Dvr-ITimeRecording-Retention'></a>
 ### Retention `property`

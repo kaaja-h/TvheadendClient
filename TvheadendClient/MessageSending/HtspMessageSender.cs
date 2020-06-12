@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading;
 using Microsoft.Extensions.Logging;
+using TvheadendClient.Exceptions;
 using TvheadendClient.Messages;
 using TvheadendClient.Serialization;
 
@@ -25,9 +26,11 @@ namespace TvheadendClient.MessageSending
 
         private readonly ConcurrentDictionary<long, Sync> _sync = new ConcurrentDictionary<long, Sync>();
 
+        private readonly int _timeout;
 
-        public HtspMessageSender(HtspClientSendReceiver sender, ILoggerFactory loggerFactory)
+        public HtspMessageSender(HtspClientSendReceiver sender, ILoggerFactory loggerFactory, int timeout)
         {
+            _timeout = timeout;
             _loggerFactory = loggerFactory;
             _sender = sender;
             _logger = loggerFactory.CreateLogger<HtspMessageSender>();
@@ -68,7 +71,12 @@ namespace TvheadendClient.MessageSending
                 _sync[i] = s;
                 _sender.Send(ms.ToArray());
 
-                s.Ev.WaitOne();
+                if (!s.Ev.WaitOne(_timeout))
+                {
+                    var msg = $"message reply not received seq {i} method {message.Method}";
+                    _logger.LogError(msg);
+                    throw new HtspException(msg);
+                }
                 return s.Response;
             }
         }
