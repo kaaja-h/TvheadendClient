@@ -1,12 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
  <PropertyGroup>
-   <TargetFramework>netstandard2.0</TargetFramework>
+   <TargetFramework>netcoreapp3.1</TargetFramework>
    <IncludeSymbols>true</IncludeSymbols>
    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
    <NuspecFile>Kaaja.TvheadendClient.nuspec</NuspecFile>
  </PropertyGroup>
  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-   <DocumentationFile>C:\Users\admin\Source\Repos\HtspClient\lib\TvheadendClient\Doc\Api.xml</DocumentationFile>
+   <DocumentationFile>..\Doc\Api.xml</DocumentationFile>
  </PropertyGroup>
 
   <ItemGroup>
