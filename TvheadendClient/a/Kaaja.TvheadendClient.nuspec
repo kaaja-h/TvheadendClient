@@ -13,12 +13,6 @@
     <summary>Client library for connecting to tvheadend. Reads EPG and recording data</summary>
     <tags>Tvheadend EPG</tags>
     <repositoryUrl>https://github.com/kaaja-h/TvheadendClient</repositoryUrl>
-    <dependencies>
-      <group targetFramework=".NETStandard2.0">
-        <dependency id="Microsoft.CSharp" version="4.7.0" exclude="Build,Analyzers" />
-        <dependency id="Microsoft.Extensions.Logging.Abstractions" version="3.1.4" exclude="Build,Analyzers" />
-	<dependency id="System.ComponentModel.Annotations" version="4.3.0" exclude="Build,Analyzers"/>
-      </group>
-    </dependencies>
+
   </metadata>
 </package>

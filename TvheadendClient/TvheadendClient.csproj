@@ -1,9 +1,24 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
  <PropertyGroup>
-   <TargetFramework>netcoreapp3.1</TargetFramework>
-   <IncludeSymbols>true</IncludeSymbols>
-   <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-   <NuspecFile>Kaaja.TvheadendClient.nuspec</NuspecFile>
+   <TargetFrameworks>netstandard2.0;netcoreapp3.1;netcoreapp3.0</TargetFrameworks>
+   <AssemblyVersion>0.2.1</AssemblyVersion>
+   <FileVersion>0.2.1</FileVersion>
+   <VersionPrefix>0.2.1</VersionPrefix>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <Authors>Karel Honzl</Authors>
+    <Product>TvheadendClient</Product>
+    <Description>Client library for connecting to tvheadend. Reads EPG and recording data</Description>
+    <Copyright>LGPL-3.0-or-later</Copyright>
+    <PackageLicenseExpression>LGPL-3.0-or-later</PackageLicenseExpression>
+    <Title>TvheadendClient</Title>
+    <PackageId>Kaaja.TvheadendClient</PackageId>
+    <PackageVersion>0.2.1</PackageVersion>
+    <PackageTags>Tvheadend EPG</PackageTags>
+    <PackageProjectUrl>https://github.com/kaaja-h/TvheadendClient</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/kaaja-h/TvheadendClient</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <RootNamespace>TvheadendClient</RootNamespace>
  </PropertyGroup>
  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
    <DocumentationFile>..\Doc\Api.xml</DocumentationFile>
