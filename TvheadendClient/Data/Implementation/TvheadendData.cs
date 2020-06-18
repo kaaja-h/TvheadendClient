@@ -63,7 +63,7 @@ namespace TvheadendClient.Data.Implementation
         private bool _asyncReady = false;
         private bool _syncReady = false;
 
-        private HashSet<string> _contentTypes = new HashSet<string>();
+        private readonly HashSet<string> _contentTypes = new HashSet<string>();
 
         public IReadOnlyCollection<string> ContentTypes => _contentTypes;
 

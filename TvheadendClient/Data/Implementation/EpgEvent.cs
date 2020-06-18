@@ -32,6 +32,19 @@ namespace TvheadendClient.Data.Implementation
 
 
         public IReadOnlyCollection<IDvrEntry> DvrEntries => Data.DvrEntries.ByEvent.ContainsKey(Id)?Data.DvrEntries.ByEvent[Id]:Array.Empty<IDvrEntry>();
+        public long? NextEventId { get; private set; }
+        public IEpgEvent NextEvent =>(NextEventId.HasValue && Data.Events.ContainsKey(NextEventId.Value)) ? Data.Events[NextEventId.Value]:null;
+
+        public long? PreviousEventId { get; internal set; }
+        public IEpgEvent PreviousEvent {
+            get
+            {
+                var pr = PreviousEventId;
+                if (!pr.HasValue || !Data.Events.ContainsKey(pr.Value))
+                    return null;
+                return Data.Events[pr.Value];
+            }
+    }
 
         protected override void UpdateInternal(MessageBase d)
         {
@@ -46,6 +59,7 @@ namespace TvheadendClient.Data.Implementation
             if (stop.HasValue)
                 Stop = stop.Value.FromUnixTimestamp();
             ContentTypeId = d.Get("contentType", ContentTypeId);
+            NextEventId = d.Get("nextEventId", NextEventId);
         }
 
 

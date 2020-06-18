@@ -51,6 +51,24 @@ namespace TvheadendClient.Data
         /// </summary>
         IReadOnlyCollection<IDvrEntry> DvrEntries { get; }
 
+        /// <summary>
+        /// Next eventId
+        /// </summary>
+        long? NextEventId { get; }
 
+        /// <summary>
+        /// Next EpgEvent
+        /// </summary>
+        IEpgEvent NextEvent { get; }
+
+        /// <summary>
+        /// Previous event id 
+        /// </summary>
+        long? PreviousEventId { get; }
+
+        /// <summary>
+        /// NextEventId
+        /// </summary>
+        IEpgEvent PreviousEvent { get; }
     }
 }
