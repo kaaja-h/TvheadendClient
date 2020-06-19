@@ -38,6 +38,20 @@
   - [StopExtra](#P-TvheadendClient-Data-Dvr-AddDvrEntryData-StopExtra 'TvheadendClient.Data.Dvr.AddDvrEntryData.StopExtra')
   - [Subtitle](#P-TvheadendClient-Data-Dvr-AddDvrEntryData-Subtitle 'TvheadendClient.Data.Dvr.AddDvrEntryData.Subtitle')
   - [Title](#P-TvheadendClient-Data-Dvr-AddDvrEntryData-Title 'TvheadendClient.Data.Dvr.AddDvrEntryData.Title')
+- [AddTimeRecordingEntryData](#T-TvheadendClient-Data-Dvr-AddTimeRecordingEntryData 'TvheadendClient.Data.Dvr.AddTimeRecordingEntryData')
+  - [#ctor(title)](#M-TvheadendClient-Data-Dvr-AddTimeRecordingEntryData-#ctor-System-String- 'TvheadendClient.Data.Dvr.AddTimeRecordingEntryData.#ctor(System.String)')
+  - [ChannelId](#P-TvheadendClient-Data-Dvr-AddTimeRecordingEntryData-ChannelId 'TvheadendClient.Data.Dvr.AddTimeRecordingEntryData.ChannelId')
+  - [Comment](#P-TvheadendClient-Data-Dvr-AddTimeRecordingEntryData-Comment 'TvheadendClient.Data.Dvr.AddTimeRecordingEntryData.Comment')
+  - [ConfigurationName](#P-TvheadendClient-Data-Dvr-AddTimeRecordingEntryData-ConfigurationName 'TvheadendClient.Data.Dvr.AddTimeRecordingEntryData.ConfigurationName')
+  - [DaysOfWeek](#P-TvheadendClient-Data-Dvr-AddTimeRecordingEntryData-DaysOfWeek 'TvheadendClient.Data.Dvr.AddTimeRecordingEntryData.DaysOfWeek')
+  - [Directory](#P-TvheadendClient-Data-Dvr-AddTimeRecordingEntryData-Directory 'TvheadendClient.Data.Dvr.AddTimeRecordingEntryData.Directory')
+  - [Enabled](#P-TvheadendClient-Data-Dvr-AddTimeRecordingEntryData-Enabled 'TvheadendClient.Data.Dvr.AddTimeRecordingEntryData.Enabled')
+  - [Name](#P-TvheadendClient-Data-Dvr-AddTimeRecordingEntryData-Name 'TvheadendClient.Data.Dvr.AddTimeRecordingEntryData.Name')
+  - [Priority](#P-TvheadendClient-Data-Dvr-AddTimeRecordingEntryData-Priority 'TvheadendClient.Data.Dvr.AddTimeRecordingEntryData.Priority')
+  - [Retention](#P-TvheadendClient-Data-Dvr-AddTimeRecordingEntryData-Retention 'TvheadendClient.Data.Dvr.AddTimeRecordingEntryData.Retention')
+  - [Start](#P-TvheadendClient-Data-Dvr-AddTimeRecordingEntryData-Start 'TvheadendClient.Data.Dvr.AddTimeRecordingEntryData.Start')
+  - [Stop](#P-TvheadendClient-Data-Dvr-AddTimeRecordingEntryData-Stop 'TvheadendClient.Data.Dvr.AddTimeRecordingEntryData.Stop')
+  - [Title](#P-TvheadendClient-Data-Dvr-AddTimeRecordingEntryData-Title 'TvheadendClient.Data.Dvr.AddTimeRecordingEntryData.Title')
 - [Client](#T-TvheadendClient-Client 'TvheadendClient.Client')
   - [#ctor(options)](#M-TvheadendClient-Client-#ctor-TvheadendClient-ClientOptions- 'TvheadendClient.Client.#ctor(TvheadendClient.ClientOptions)')
   - [#ctor(options,loggerFactory)](#M-TvheadendClient-Client-#ctor-TvheadendClient-ClientOptions,Microsoft-Extensions-Logging-ILoggerFactory- 'TvheadendClient.Client.#ctor(TvheadendClient.ClientOptions,Microsoft.Extensions.Logging.ILoggerFactory)')
@@ -84,7 +98,16 @@
 - [DynamicMessageItem](#T-TvheadendClient-Messages-DynamicMessageItem 'TvheadendClient.Messages.DynamicMessageItem')
   - [GetDynamicMemberNames()](#M-TvheadendClient-Messages-DynamicMessageItem-GetDynamicMemberNames 'TvheadendClient.Messages.DynamicMessageItem.GetDynamicMemberNames')
   - [Get\`\`1(name,def)](#M-TvheadendClient-Messages-DynamicMessageItem-Get``1-System-String,``0- 'TvheadendClient.Messages.DynamicMessageItem.Get``1(System.String,``0)')
-  - [Set(name,value)](#M-TvheadendClient-Messages-DynamicMessageItem-Set-System-String,System-Object- 'TvheadendClient.Messages.DynamicMessageItem.Set(System.String,System.Object)')
+  - [InnerSet(name,value)](#M-TvheadendClient-Messages-DynamicMessageItem-InnerSet-System-String,System-Object- 'TvheadendClient.Messages.DynamicMessageItem.InnerSet(System.String,System.Object)')
+  - [Set(name,value)](#M-TvheadendClient-Messages-DynamicMessageItem-Set-System-String,System-String- 'TvheadendClient.Messages.DynamicMessageItem.Set(System.String,System.String)')
+  - [Set(name,value)](#M-TvheadendClient-Messages-DynamicMessageItem-Set-System-String,System-String[]- 'TvheadendClient.Messages.DynamicMessageItem.Set(System.String,System.String[])')
+  - [Set(name,value)](#M-TvheadendClient-Messages-DynamicMessageItem-Set-System-String,System-Nullable{System-Int64}- 'TvheadendClient.Messages.DynamicMessageItem.Set(System.String,System.Nullable{System.Int64})')
+  - [Set(name,value)](#M-TvheadendClient-Messages-DynamicMessageItem-Set-System-String,System-Int64[]- 'TvheadendClient.Messages.DynamicMessageItem.Set(System.String,System.Int64[])')
+  - [Set(name,value)](#M-TvheadendClient-Messages-DynamicMessageItem-Set-System-String,System-Nullable{System-Int32}- 'TvheadendClient.Messages.DynamicMessageItem.Set(System.String,System.Nullable{System.Int32})')
+  - [Set(name,value)](#M-TvheadendClient-Messages-DynamicMessageItem-Set-System-String,System-Int32[]- 'TvheadendClient.Messages.DynamicMessageItem.Set(System.String,System.Int32[])')
+  - [Set(name,value)](#M-TvheadendClient-Messages-DynamicMessageItem-Set-System-String,System-Byte[]- 'TvheadendClient.Messages.DynamicMessageItem.Set(System.String,System.Byte[])')
+  - [Set(name,value)](#M-TvheadendClient-Messages-DynamicMessageItem-Set-System-String,System-Dynamic-DynamicObject- 'TvheadendClient.Messages.DynamicMessageItem.Set(System.String,System.Dynamic.DynamicObject)')
+  - [Set(name,value)](#M-TvheadendClient-Messages-DynamicMessageItem-Set-System-String,System-Dynamic-DynamicObject[]- 'TvheadendClient.Messages.DynamicMessageItem.Set(System.String,System.Dynamic.DynamicObject[])')
   - [TryGetIndex()](#M-TvheadendClient-Messages-DynamicMessageItem-TryGetIndex-System-Dynamic-GetIndexBinder,System-Object[],System-Object@- 'TvheadendClient.Messages.DynamicMessageItem.TryGetIndex(System.Dynamic.GetIndexBinder,System.Object[],System.Object@)')
   - [TryGetMember()](#M-TvheadendClient-Messages-DynamicMessageItem-TryGetMember-System-Dynamic-GetMemberBinder,System-Object@- 'TvheadendClient.Messages.DynamicMessageItem.TryGetMember(System.Dynamic.GetMemberBinder,System.Object@)')
   - [TrySetIndex()](#M-TvheadendClient-Messages-DynamicMessageItem-TrySetIndex-System-Dynamic-SetIndexBinder,System-Object[],System-Object- 'TvheadendClient.Messages.DynamicMessageItem.TrySetIndex(System.Dynamic.SetIndexBinder,System.Object[],System.Object)')
@@ -119,6 +142,9 @@
   - [StopExtra](#P-TvheadendClient-Data-Dvr-IAutoRecordingEntry-StopExtra 'TvheadendClient.Data.Dvr.IAutoRecordingEntry.StopExtra')
   - [Title](#P-TvheadendClient-Data-Dvr-IAutoRecordingEntry-Title 'TvheadendClient.Data.Dvr.IAutoRecordingEntry.Title')
 - [IAutoRecordingStorage](#T-TvheadendClient-Data-Dvr-IAutoRecordingStorage 'TvheadendClient.Data.Dvr.IAutoRecordingStorage')
+  - [TryAddAutoRecording(data,entryId)](#M-TvheadendClient-Data-Dvr-IAutoRecordingStorage-TryAddAutoRecording-TvheadendClient-Data-Dvr-AddAutoRecordingEntryData,System-Int64@- 'TvheadendClient.Data.Dvr.IAutoRecordingStorage.TryAddAutoRecording(TvheadendClient.Data.Dvr.AddAutoRecordingEntryData,System.Int64@)')
+  - [TryDeleteAutoRecording(entry)](#M-TvheadendClient-Data-Dvr-IAutoRecordingStorage-TryDeleteAutoRecording-TvheadendClient-Data-Dvr-IAutoRecordingEntry- 'TvheadendClient.Data.Dvr.IAutoRecordingStorage.TryDeleteAutoRecording(TvheadendClient.Data.Dvr.IAutoRecordingEntry)')
+  - [TryDeleteAutoRecording(entryId)](#M-TvheadendClient-Data-Dvr-IAutoRecordingStorage-TryDeleteAutoRecording-System-String- 'TvheadendClient.Data.Dvr.IAutoRecordingStorage.TryDeleteAutoRecording(System.String)')
 - [IChannel](#T-TvheadendClient-Data-IChannel 'TvheadendClient.Data.IChannel')
   - [Events](#P-TvheadendClient-Data-IChannel-Events 'TvheadendClient.Data.IChannel.Events')
   - [Icon](#P-TvheadendClient-Data-IChannel-Icon 'TvheadendClient.Data.IChannel.Icon')
@@ -180,6 +206,10 @@
   - [ContentTypeId](#P-TvheadendClient-Data-IEpgEvent-ContentTypeId 'TvheadendClient.Data.IEpgEvent.ContentTypeId')
   - [Description](#P-TvheadendClient-Data-IEpgEvent-Description 'TvheadendClient.Data.IEpgEvent.Description')
   - [DvrEntries](#P-TvheadendClient-Data-IEpgEvent-DvrEntries 'TvheadendClient.Data.IEpgEvent.DvrEntries')
+  - [NextEvent](#P-TvheadendClient-Data-IEpgEvent-NextEvent 'TvheadendClient.Data.IEpgEvent.NextEvent')
+  - [NextEventId](#P-TvheadendClient-Data-IEpgEvent-NextEventId 'TvheadendClient.Data.IEpgEvent.NextEventId')
+  - [PreviousEvent](#P-TvheadendClient-Data-IEpgEvent-PreviousEvent 'TvheadendClient.Data.IEpgEvent.PreviousEvent')
+  - [PreviousEventId](#P-TvheadendClient-Data-IEpgEvent-PreviousEventId 'TvheadendClient.Data.IEpgEvent.PreviousEventId')
   - [Start](#P-TvheadendClient-Data-IEpgEvent-Start 'TvheadendClient.Data.IEpgEvent.Start')
   - [Stop](#P-TvheadendClient-Data-IEpgEvent-Stop 'TvheadendClient.Data.IEpgEvent.Stop')
   - [Summary](#P-TvheadendClient-Data-IEpgEvent-Summary 'TvheadendClient.Data.IEpgEvent.Summary')
@@ -206,6 +236,9 @@
   - [Stop](#P-TvheadendClient-Data-Dvr-ITimeRecording-Stop 'TvheadendClient.Data.Dvr.ITimeRecording.Stop')
   - [Title](#P-TvheadendClient-Data-Dvr-ITimeRecording-Title 'TvheadendClient.Data.Dvr.ITimeRecording.Title')
 - [ITimeRecordingStorage](#T-TvheadendClient-Data-Dvr-ITimeRecordingStorage 'TvheadendClient.Data.Dvr.ITimeRecordingStorage')
+  - [TryAddTimeRecording(data,id)](#M-TvheadendClient-Data-Dvr-ITimeRecordingStorage-TryAddTimeRecording-TvheadendClient-Data-Dvr-AddTimeRecordingEntryData,System-String@- 'TvheadendClient.Data.Dvr.ITimeRecordingStorage.TryAddTimeRecording(TvheadendClient.Data.Dvr.AddTimeRecordingEntryData,System.String@)')
+  - [TryDeleteTimeRecording(item)](#M-TvheadendClient-Data-Dvr-ITimeRecordingStorage-TryDeleteTimeRecording-TvheadendClient-Data-Dvr-ITimeRecording- 'TvheadendClient.Data.Dvr.ITimeRecordingStorage.TryDeleteTimeRecording(TvheadendClient.Data.Dvr.ITimeRecording)')
+  - [TryDeleteTimeRecording(itemId)](#M-TvheadendClient-Data-Dvr-ITimeRecordingStorage-TryDeleteTimeRecording-System-String- 'TvheadendClient.Data.Dvr.ITimeRecordingStorage.TryDeleteTimeRecording(System.String)')
 - [ITvheadendData](#T-TvheadendClient-Data-ITvheadendData 'TvheadendClient.Data.ITvheadendData')
   - [AutoRecordings](#P-TvheadendClient-Data-ITvheadendData-AutoRecordings 'TvheadendClient.Data.ITvheadendData.AutoRecordings')
   - [Channels](#P-TvheadendClient-Data-ITvheadendData-Channels 'TvheadendClient.Data.ITvheadendData.Channels')
@@ -528,6 +561,114 @@ Recording Subtitle
 ##### Summary
 
 Recording Title
+
+<a name='T-TvheadendClient-Data-Dvr-AddTimeRecordingEntryData'></a>
+## AddTimeRecordingEntryData `type`
+
+##### Namespace
+
+TvheadendClient.Data.Dvr
+
+##### Summary
+
+Request data for creating new Time recording
+
+<a name='M-TvheadendClient-Data-Dvr-AddTimeRecordingEntryData-#ctor-System-String-'></a>
+### #ctor(title) `constructor`
+
+##### Summary
+
+Creates new instance with title
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| title | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
+
+<a name='P-TvheadendClient-Data-Dvr-AddTimeRecordingEntryData-ChannelId'></a>
+### ChannelId `property`
+
+##### Summary
+
+Channel ID
+
+<a name='P-TvheadendClient-Data-Dvr-AddTimeRecordingEntryData-Comment'></a>
+### Comment `property`
+
+##### Summary
+
+User Comment
+
+<a name='P-TvheadendClient-Data-Dvr-AddTimeRecordingEntryData-ConfigurationName'></a>
+### ConfigurationName `property`
+
+##### Summary
+
+DVR Configuration Name / UUID.
+
+<a name='P-TvheadendClient-Data-Dvr-AddTimeRecordingEntryData-DaysOfWeek'></a>
+### DaysOfWeek `property`
+
+##### Summary
+
+Days of week
+
+<a name='P-TvheadendClient-Data-Dvr-AddTimeRecordingEntryData-Directory'></a>
+### Directory `property`
+
+##### Summary
+
+Forced output directory name
+
+<a name='P-TvheadendClient-Data-Dvr-AddTimeRecordingEntryData-Enabled'></a>
+### Enabled `property`
+
+##### Summary
+
+Enabled flag
+
+<a name='P-TvheadendClient-Data-Dvr-AddTimeRecordingEntryData-Name'></a>
+### Name `property`
+
+##### Summary
+
+Name for this timerec entry
+
+<a name='P-TvheadendClient-Data-Dvr-AddTimeRecordingEntryData-Priority'></a>
+### Priority `property`
+
+##### Summary
+
+Priority
+
+<a name='P-TvheadendClient-Data-Dvr-AddTimeRecordingEntryData-Retention'></a>
+### Retention `property`
+
+##### Summary
+
+Retention in days.
+
+<a name='P-TvheadendClient-Data-Dvr-AddTimeRecordingEntryData-Start'></a>
+### Start `property`
+
+##### Summary
+
+Minutes from midnight (up to 24*60) for the start of the time window
+
+<a name='P-TvheadendClient-Data-Dvr-AddTimeRecordingEntryData-Stop'></a>
+### Stop `property`
+
+##### Summary
+
+Minutes from midnight (up to 24*60) for the end of the time window (including, cross-noon allowed)
+
+<a name='P-TvheadendClient-Data-Dvr-AddTimeRecordingEntryData-Title'></a>
+### Title `property`
+
+##### Summary
+
+Title for the recordings.
 
 <a name='T-TvheadendClient-Client'></a>
 ## Client `type`
@@ -917,8 +1058,8 @@ Get child value
 | ---- | ----------- |
 | T | child type from server -  can be received only long?, string, byte[], DynamicMessageItem or array of this types |
 
-<a name='M-TvheadendClient-Messages-DynamicMessageItem-Set-System-String,System-Object-'></a>
-### Set(name,value) `method`
+<a name='M-TvheadendClient-Messages-DynamicMessageItem-InnerSet-System-String,System-Object-'></a>
+### InnerSet(name,value) `method`
 
 ##### Summary
 
@@ -930,6 +1071,132 @@ Set value  - to server can be send only long?, int?, string, byte[], DynamicMess
 | ---- | ---- | ----------- |
 | name | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | property name |
 | value | [System.Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object') | value |
+
+<a name='M-TvheadendClient-Messages-DynamicMessageItem-Set-System-String,System-String-'></a>
+### Set(name,value) `method`
+
+##### Summary
+
+Set string value
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| name | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | property name |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | value |
+
+<a name='M-TvheadendClient-Messages-DynamicMessageItem-Set-System-String,System-String[]-'></a>
+### Set(name,value) `method`
+
+##### Summary
+
+Set string[] value
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| name | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | property name |
+| value | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | value |
+
+<a name='M-TvheadendClient-Messages-DynamicMessageItem-Set-System-String,System-Nullable{System-Int64}-'></a>
+### Set(name,value) `method`
+
+##### Summary
+
+Set long value
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| name | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | property name |
+| value | [System.Nullable{System.Int64}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Int64}') | value |
+
+<a name='M-TvheadendClient-Messages-DynamicMessageItem-Set-System-String,System-Int64[]-'></a>
+### Set(name,value) `method`
+
+##### Summary
+
+Set long[] value
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| name | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | property name |
+| value | [System.Int64[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64[] 'System.Int64[]') | value |
+
+<a name='M-TvheadendClient-Messages-DynamicMessageItem-Set-System-String,System-Nullable{System-Int32}-'></a>
+### Set(name,value) `method`
+
+##### Summary
+
+Set int value
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| name | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | property name |
+| value | [System.Nullable{System.Int32}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Int32}') | value |
+
+<a name='M-TvheadendClient-Messages-DynamicMessageItem-Set-System-String,System-Int32[]-'></a>
+### Set(name,value) `method`
+
+##### Summary
+
+Set int[] value
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| name | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | property name |
+| value | [System.Int32[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32[] 'System.Int32[]') | value |
+
+<a name='M-TvheadendClient-Messages-DynamicMessageItem-Set-System-String,System-Byte[]-'></a>
+### Set(name,value) `method`
+
+##### Summary
+
+Set byte[] value
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| name | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | property name |
+| value | [System.Byte[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Byte[] 'System.Byte[]') | value |
+
+<a name='M-TvheadendClient-Messages-DynamicMessageItem-Set-System-String,System-Dynamic-DynamicObject-'></a>
+### Set(name,value) `method`
+
+##### Summary
+
+Set object value
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| name | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | property name |
+| value | [System.Dynamic.DynamicObject](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Dynamic.DynamicObject 'System.Dynamic.DynamicObject') | value |
+
+<a name='M-TvheadendClient-Messages-DynamicMessageItem-Set-System-String,System-Dynamic-DynamicObject[]-'></a>
+### Set(name,value) `method`
+
+##### Summary
+
+Set object[] value
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| name | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | property name |
+| value | [System.Dynamic.DynamicObject[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Dynamic.DynamicObject[] 'System.Dynamic.DynamicObject[]') | value |
 
 <a name='M-TvheadendClient-Messages-DynamicMessageItem-TryGetIndex-System-Dynamic-GetIndexBinder,System-Object[],System-Object@-'></a>
 ### TryGetIndex() `method`
@@ -1188,6 +1455,58 @@ TvheadendClient.Data.Dvr
 ##### Summary
 
 Storage for automatic recordings
+
+<a name='M-TvheadendClient-Data-Dvr-IAutoRecordingStorage-TryAddAutoRecording-TvheadendClient-Data-Dvr-AddAutoRecordingEntryData,System-Int64@-'></a>
+### TryAddAutoRecording(data,entryId) `method`
+
+##### Summary
+
+Add autorecording entry
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| data | [TvheadendClient.Data.Dvr.AddAutoRecordingEntryData](#T-TvheadendClient-Data-Dvr-AddAutoRecordingEntryData 'TvheadendClient.Data.Dvr.AddAutoRecordingEntryData') | Autorecording data |
+| entryId | [System.Int64@](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64@ 'System.Int64@') | new autorecording id |
+
+<a name='M-TvheadendClient-Data-Dvr-IAutoRecordingStorage-TryDeleteAutoRecording-TvheadendClient-Data-Dvr-IAutoRecordingEntry-'></a>
+### TryDeleteAutoRecording(entry) `method`
+
+##### Summary
+
+try delete autoRecording
+
+##### Returns
+
+success
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| entry | [TvheadendClient.Data.Dvr.IAutoRecordingEntry](#T-TvheadendClient-Data-Dvr-IAutoRecordingEntry 'TvheadendClient.Data.Dvr.IAutoRecordingEntry') | entry |
+
+<a name='M-TvheadendClient-Data-Dvr-IAutoRecordingStorage-TryDeleteAutoRecording-System-String-'></a>
+### TryDeleteAutoRecording(entryId) `method`
+
+##### Summary
+
+try delete autoRecording
+
+##### Returns
+
+success
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| entryId | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | entry id |
 
 <a name='T-TvheadendClient-Data-IChannel'></a>
 ## IChannel `type`
@@ -1757,6 +2076,34 @@ Event description
 
 Related Dvr entries
 
+<a name='P-TvheadendClient-Data-IEpgEvent-NextEvent'></a>
+### NextEvent `property`
+
+##### Summary
+
+Next EpgEvent
+
+<a name='P-TvheadendClient-Data-IEpgEvent-NextEventId'></a>
+### NextEventId `property`
+
+##### Summary
+
+Next eventId
+
+<a name='P-TvheadendClient-Data-IEpgEvent-PreviousEvent'></a>
+### PreviousEvent `property`
+
+##### Summary
+
+NextEventId
+
+<a name='P-TvheadendClient-Data-IEpgEvent-PreviousEventId'></a>
+### PreviousEventId `property`
+
+##### Summary
+
+Previous event id
+
 <a name='P-TvheadendClient-Data-IEpgEvent-Start'></a>
 ### Start `property`
 
@@ -1975,6 +2322,58 @@ TvheadendClient.Data.Dvr
 ##### Summary
 
 Time recording storage
+
+<a name='M-TvheadendClient-Data-Dvr-ITimeRecordingStorage-TryAddTimeRecording-TvheadendClient-Data-Dvr-AddTimeRecordingEntryData,System-String@-'></a>
+### TryAddTimeRecording(data,id) `method`
+
+##### Summary
+
+Try add time recording
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| data | [TvheadendClient.Data.Dvr.AddTimeRecordingEntryData](#T-TvheadendClient-Data-Dvr-AddTimeRecordingEntryData 'TvheadendClient.Data.Dvr.AddTimeRecordingEntryData') | time recording data |
+| id | [System.String@](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String@ 'System.String@') | id of created item |
+
+<a name='M-TvheadendClient-Data-Dvr-ITimeRecordingStorage-TryDeleteTimeRecording-TvheadendClient-Data-Dvr-ITimeRecording-'></a>
+### TryDeleteTimeRecording(item) `method`
+
+##### Summary
+
+Try delete time recording
+
+##### Returns
+
+success
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| item | [TvheadendClient.Data.Dvr.ITimeRecording](#T-TvheadendClient-Data-Dvr-ITimeRecording 'TvheadendClient.Data.Dvr.ITimeRecording') | item to delete |
+
+<a name='M-TvheadendClient-Data-Dvr-ITimeRecordingStorage-TryDeleteTimeRecording-System-String-'></a>
+### TryDeleteTimeRecording(itemId) `method`
+
+##### Summary
+
+Try delete time recording
+
+##### Returns
+
+success
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| itemId | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | item id to delete |
 
 <a name='T-TvheadendClient-Data-ITvheadendData'></a>
 ## ITvheadendData `type`

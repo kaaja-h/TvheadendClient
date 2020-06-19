@@ -52,7 +52,7 @@ namespace TvheadendClient
             _client = new HtspClientSendReceiver(options.Host, options.Port, options.Ipv6, loggerFactory, options.ConnectionTimeout);
             _sender = new HtspMessageSender(_client, loggerFactory, options.MessageTimeout);
 
-            _data = new TvheadendData(loggerFactory.CreateLogger<TvheadendData>(),this);
+            _data = new TvheadendData(loggerFactory,this);
         }
 
         private readonly TvheadendData _data;

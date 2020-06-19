@@ -88,11 +88,76 @@ namespace TvheadendClient.Messages
         /// </summary>
         /// <param name="name">property name</param>
         /// <param name="value">value</param>
-        public void Set(string name, object value)
+        internal void InnerSet(string name, object value)
         {
             Data[Normalize(name)] = value;
         }
 
+        /// <summary>
+        /// Set string value
+        /// </summary>
+        /// <param name="name">property name</param>
+        /// <param name="value">value</param>
+        public void Set(string name, string value) => InnerSet(name, value);
+
+        /// <summary>
+        /// Set string[] value
+        /// </summary>
+        /// <param name="name">property name</param>
+        /// <param name="value">value</param>
+        public void Set(string name, string[] value) => InnerSet(name, value);
+
+        /// <summary>
+        /// Set long value
+        /// </summary>
+        /// <param name="name">property name</param>
+        /// <param name="value">value</param>
+        public void Set(string name, long? value) => InnerSet(name, value);
+
+        /// <summary>
+        /// Set long[] value
+        /// </summary>
+        /// <param name="name">property name</param>
+        /// <param name="value">value</param>
+        public void Set(string name, long[] value) => InnerSet(name, value);
+
+        /// <summary>
+        /// Set int value
+        /// </summary>
+        /// <param name="name">property name</param>
+        /// <param name="value">value</param>
+        public void Set(string name, int? value) => InnerSet(name, value);
+
+        /// <summary>
+        /// Set int[] value
+        /// </summary>
+        /// <param name="name">property name</param>
+        /// <param name="value">value</param>
+        public void Set(string name, int[] value) => InnerSet(name, value);
+
+        /// <summary>
+        /// Set byte[] value
+        /// </summary>
+        /// <param name="name">property name</param>
+        /// <param name="value">value</param>
+        public void Set(string name, byte[] value) => InnerSet(name, value);
+
         
+
+        /// <summary>
+        /// Set object value
+        /// </summary>
+        /// <param name="name">property name</param>
+        /// <param name="value">value</param>
+        public void Set(string name, DynamicObject value) => InnerSet(name, value);
+
+        /// <summary>
+        /// Set object[] value
+        /// </summary>
+        /// <param name="name">property name</param>
+        /// <param name="value">value</param>
+        public void Set(string name, DynamicObject[] value) => InnerSet(name, value);
+
+
     }
 }

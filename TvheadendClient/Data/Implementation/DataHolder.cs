@@ -3,18 +3,21 @@ using System.Collections;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.Extensions.Logging;
 using TvheadendClient.Messages;
 
 namespace TvheadendClient.Data.Implementation
 {
-    internal abstract class DataHolder<TIdType, TDataType, TInterfaceType> : IItems<TInterfaceType, TIdType>
+    internal abstract class DataHolder<TIdType, TDataType, TInterfaceType, TThisType> : IItems<TInterfaceType, TIdType>
         where TDataType : DataBase<TIdType>, TInterfaceType, new()
         where TInterfaceType : IDataItem<TIdType>
+        where TThisType: DataHolder<TIdType, TDataType, TInterfaceType, TThisType>
     {
 
         protected readonly TvheadendData TvData;
         protected readonly ConcurrentDictionary<TIdType, TDataType> data;
         protected readonly Client client;
+        protected readonly ILogger<TThisType> logger;
 
         public event EventHandler<ItemChangeEvent<TInterfaceType>> ItemDeleted;
         public event EventHandler<ItemChangeEvent<TInterfaceType>> ItemAdded;
@@ -26,8 +29,9 @@ namespace TvheadendClient.Data.Implementation
         private readonly string _updateMethod;
         private readonly string _deleteMethod;
 
-        public DataHolder(TvheadendData data, string createMethod, string updateMethod, string deleteMethod, Client client)
+        public DataHolder(TvheadendData data, string createMethod, string updateMethod, string deleteMethod, Client client, ILoggerFactory loggerFactory)
         {
+            logger = loggerFactory.CreateLogger<TThisType>();
             TvData = data;
             this.client = client;
             _createMethod = createMethod;

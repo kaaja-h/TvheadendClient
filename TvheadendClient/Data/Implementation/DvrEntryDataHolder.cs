@@ -1,12 +1,13 @@
 ﻿using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using Microsoft.Extensions.Logging;
 using TvheadendClient.Data.Dvr;
 using TvheadendClient.Messages;
 
 namespace TvheadendClient.Data.Implementation
 {
-    internal class DvrEntryDataHolder : DataHolder<long, DvrEntry, IDvrEntry>, IDvrEntryStorage
+    internal class DvrEntryDataHolder : DataHolder<long, DvrEntry, IDvrEntry, DvrEntryDataHolder>, IDvrEntryStorage
     {
 
 
@@ -62,7 +63,7 @@ namespace TvheadendClient.Data.Implementation
         }
 
 
-        public DvrEntryDataHolder(TvheadendData data, Client client) : base(data, "dvrEntryAdd", "dvrEntryUpdate", "dvrEntryDelete", client)
+        public DvrEntryDataHolder(TvheadendData data, Client client, ILoggerFactory factory) : base(data, "dvrEntryAdd", "dvrEntryUpdate", "dvrEntryDelete", client, factory)
         {
         }
 

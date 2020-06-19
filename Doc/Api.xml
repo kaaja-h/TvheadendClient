@@ -329,6 +329,77 @@
             <param name="stop">stop of recording</param>
             <param name="title">recording title</param>
         </member>
+        <member name="T:TvheadendClient.Data.Dvr.AddTimeRecordingEntryData">
+            <summary>
+            Request data for creating new Time recording
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.AddTimeRecordingEntryData.Enabled">
+            <summary>
+             Enabled flag 
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.AddTimeRecordingEntryData.Title">
+            <summary>
+            Title for the recordings.
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.AddTimeRecordingEntryData.Directory">
+            <summary>
+            Forced output directory name 
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.AddTimeRecordingEntryData.Name">
+            <summary>
+            Name for this timerec entry
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.AddTimeRecordingEntryData.ConfigurationName">
+            <summary>
+            DVR Configuration Name / UUID.
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.AddTimeRecordingEntryData.ChannelId">
+            <summary>
+            Channel ID
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.AddTimeRecordingEntryData.DaysOfWeek">
+            <summary>
+            Days of week
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.AddTimeRecordingEntryData.Priority">
+            <summary>
+            Priority 
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.AddTimeRecordingEntryData.Start">
+            <summary>
+            Minutes from midnight (up to 24*60) for the start of the time window 
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.AddTimeRecordingEntryData.Stop">
+            <summary>
+            Minutes from midnight (up to 24*60) for the end of the time window (including, cross-noon allowed)
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.AddTimeRecordingEntryData.Retention">
+            <summary>
+            Retention in days. 
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.Dvr.AddTimeRecordingEntryData.Comment">
+            <summary>
+            User Comment
+            </summary>
+        </member>
+        <member name="M:TvheadendClient.Data.Dvr.AddTimeRecordingEntryData.#ctor(System.String)">
+            <summary>
+            Creates new instance with title
+            </summary>
+            <param name="title"></param>
+        </member>
         <member name="T:TvheadendClient.Data.Dvr.DuplicityDetection">
             <summary>
             Duplicity detection
@@ -508,6 +579,28 @@
             <summary>
             Storage for automatic recordings
             </summary>
+        </member>
+        <member name="M:TvheadendClient.Data.Dvr.IAutoRecordingStorage.TryAddAutoRecording(TvheadendClient.Data.Dvr.AddAutoRecordingEntryData,System.Int64@)">
+            <summary>
+            Add autorecording entry
+            </summary>
+            <param name="data">Autorecording data</param>
+            <param name="entryId">new autorecording id</param>
+            <returns></returns>
+        </member>
+        <member name="M:TvheadendClient.Data.Dvr.IAutoRecordingStorage.TryDeleteAutoRecording(TvheadendClient.Data.Dvr.IAutoRecordingEntry)">
+            <summary>
+            try delete autoRecording
+            </summary>
+            <param name="entry">entry</param>
+            <returns>success</returns>
+        </member>
+        <member name="M:TvheadendClient.Data.Dvr.IAutoRecordingStorage.TryDeleteAutoRecording(System.String)">
+            <summary>
+            try delete autoRecording
+            </summary>
+            <param name="entryId">entry id</param>
+            <returns>success</returns>
         </member>
         <member name="T:TvheadendClient.Data.Dvr.IDvrConfiguration">
             <summary>
@@ -816,6 +909,28 @@
             Time recording storage
             </summary>
         </member>
+        <member name="M:TvheadendClient.Data.Dvr.ITimeRecordingStorage.TryAddTimeRecording(TvheadendClient.Data.Dvr.AddTimeRecordingEntryData,System.String@)">
+            <summary>
+            Try add time recording
+            </summary>
+            <param name="data">time recording data</param>
+            <param name="id">id of created item</param>
+            <returns></returns>
+        </member>
+        <member name="M:TvheadendClient.Data.Dvr.ITimeRecordingStorage.TryDeleteTimeRecording(TvheadendClient.Data.Dvr.ITimeRecording)">
+            <summary>
+            Try delete time recording
+            </summary>
+            <param name="item">item to delete</param>
+            <returns>success</returns>
+        </member>
+        <member name="M:TvheadendClient.Data.Dvr.ITimeRecordingStorage.TryDeleteTimeRecording(System.String)">
+            <summary>
+            Try delete time recording
+            </summary>
+            <param name="itemId">item id to delete</param>
+            <returns>success</returns>
+        </member>
         <member name="T:TvheadendClient.Data.Dvr.UpdateDvrEntryData">
             <summary>
             Data for updating Dvr Entry. When is property null, property is not changed
@@ -1038,6 +1153,26 @@
             Related Dvr entries
             </summary>
         </member>
+        <member name="P:TvheadendClient.Data.IEpgEvent.NextEventId">
+            <summary>
+            Next eventId
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.IEpgEvent.NextEvent">
+            <summary>
+            Next EpgEvent
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.IEpgEvent.PreviousEventId">
+            <summary>
+            Previous event id 
+            </summary>
+        </member>
+        <member name="P:TvheadendClient.Data.IEpgEvent.PreviousEvent">
+            <summary>
+            NextEventId
+            </summary>
+        </member>
         <member name="T:TvheadendClient.Data.IEpgEventStorage">
             <summary>
             Epg event storage
@@ -1200,9 +1335,72 @@
             <param name="def">default value</param>
             <returns></returns>
         </member>
-        <member name="M:TvheadendClient.Messages.DynamicMessageItem.Set(System.String,System.Object)">
+        <member name="M:TvheadendClient.Messages.DynamicMessageItem.InnerSet(System.String,System.Object)">
             <summary>
             Set value  - to server can be send only long?, int?, string, byte[], DynamicMessageItem or array of this types
+            </summary>
+            <param name="name">property name</param>
+            <param name="value">value</param>
+        </member>
+        <member name="M:TvheadendClient.Messages.DynamicMessageItem.Set(System.String,System.String)">
+            <summary>
+            Set string value
+            </summary>
+            <param name="name">property name</param>
+            <param name="value">value</param>
+        </member>
+        <member name="M:TvheadendClient.Messages.DynamicMessageItem.Set(System.String,System.String[])">
+            <summary>
+            Set string[] value
+            </summary>
+            <param name="name">property name</param>
+            <param name="value">value</param>
+        </member>
+        <member name="M:TvheadendClient.Messages.DynamicMessageItem.Set(System.String,System.Nullable{System.Int64})">
+            <summary>
+            Set long value
+            </summary>
+            <param name="name">property name</param>
+            <param name="value">value</param>
+        </member>
+        <member name="M:TvheadendClient.Messages.DynamicMessageItem.Set(System.String,System.Int64[])">
+            <summary>
+            Set long[] value
+            </summary>
+            <param name="name">property name</param>
+            <param name="value">value</param>
+        </member>
+        <member name="M:TvheadendClient.Messages.DynamicMessageItem.Set(System.String,System.Nullable{System.Int32})">
+            <summary>
+            Set int value
+            </summary>
+            <param name="name">property name</param>
+            <param name="value">value</param>
+        </member>
+        <member name="M:TvheadendClient.Messages.DynamicMessageItem.Set(System.String,System.Int32[])">
+            <summary>
+            Set int[] value
+            </summary>
+            <param name="name">property name</param>
+            <param name="value">value</param>
+        </member>
+        <member name="M:TvheadendClient.Messages.DynamicMessageItem.Set(System.String,System.Byte[])">
+            <summary>
+            Set byte[] value
+            </summary>
+            <param name="name">property name</param>
+            <param name="value">value</param>
+        </member>
+        <member name="M:TvheadendClient.Messages.DynamicMessageItem.Set(System.String,System.Dynamic.DynamicObject)">
+            <summary>
+            Set object value
+            </summary>
+            <param name="name">property name</param>
+            <param name="value">value</param>
+        </member>
+        <member name="M:TvheadendClient.Messages.DynamicMessageItem.Set(System.String,System.Dynamic.DynamicObject[])">
+            <summary>
+            Set object[] value
             </summary>
             <param name="name">property name</param>
             <param name="value">value</param>

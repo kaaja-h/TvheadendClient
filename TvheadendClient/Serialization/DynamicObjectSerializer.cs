@@ -64,7 +64,7 @@ namespace TvheadendClient.Serialization
             {
                 var serializer = GetSerializer(item.Type);
                 var value = serializer.Deserialize(data, item.DataOffset, item.DataLength);
-                output.Set(item.Name,value);
+                output.InnerSet(item.Name,value);
             }
             return output;
         }

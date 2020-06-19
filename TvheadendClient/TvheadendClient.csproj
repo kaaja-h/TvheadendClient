@@ -19,6 +19,7 @@
     <RepositoryUrl>https://github.com/kaaja-h/TvheadendClient</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <RootNamespace>TvheadendClient</RootNamespace>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
  </PropertyGroup>
  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
    <DocumentationFile>..\Doc\Api.xml</DocumentationFile>

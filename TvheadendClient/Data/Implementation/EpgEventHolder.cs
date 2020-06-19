@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using Microsoft.Extensions.Logging;
 using TvheadendClient.Messages;
 
 namespace TvheadendClient.Data.Implementation
 {
-    internal class EpgEventHolder:DataHolder<long, EpgEvent, IEpgEvent>, IEpgEventStorage
+    internal class EpgEventHolder:DataHolder<long, EpgEvent, IEpgEvent, EpgEventHolder>, IEpgEventStorage
     {
 
         public IReadOnlyDictionary<long, IReadOnlyCollection<IEpgEvent>> ByChannels => _byChannels;
@@ -17,7 +18,7 @@ namespace TvheadendClient.Data.Implementation
 
 
 
-        public EpgEventHolder(TvheadendData data, Client client) : base(data, "eventAdd", "eventUpdate", "eventDelete", client)
+        public EpgEventHolder(TvheadendData data, Client client, ILoggerFactory factory) : base(data, "eventAdd", "eventUpdate", "eventDelete", client, factory)
         {
 
         }

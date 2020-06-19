@@ -1,12 +1,13 @@
 ﻿using System;
+using Microsoft.Extensions.Logging;
 using TvheadendClient.Messages;
 
 namespace TvheadendClient.Data.Implementation
 {
-    internal class TagHolder : DataHolder<long, Tag, ITag>, ITagStorage
+    internal class TagHolder : DataHolder<long, Tag, ITag, TagHolder>, ITagStorage
     {
-        public TagHolder(TvheadendData data, Client client) : base(data,
-            "tagAdd", "tagUpdate", "tagDelete", client)
+        public TagHolder(TvheadendData data, Client client, ILoggerFactory factory) : base(data,
+            "tagAdd", "tagUpdate", "tagDelete", client, factory)
         {
         }
 

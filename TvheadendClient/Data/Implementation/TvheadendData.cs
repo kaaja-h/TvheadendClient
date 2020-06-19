@@ -42,16 +42,16 @@ namespace TvheadendClient.Data.Implementation
 
         internal Dictionary<string, Action<MessageBase>> Actions;
 
-        internal TvheadendData(ILogger<TvheadendData> logger, Client client)
+        internal TvheadendData(ILoggerFactory factory, Client client)
         {
-            _logger = logger;
+            _logger = factory.CreateLogger<TvheadendData>();
             _client = client;
-            ChannelHolder = new ChannelHolder(this, _client);
-            TagHolder = new TagHolder(this, _client);
-            EpgEventHolder = new EpgEventHolder(this, _client);
-            AutoRecordingDataHolder = new AutoRecordingDataHolder(this, _client);
-            DvrEntryDataHolder = new DvrEntryDataHolder(this, _client);
-            TimeRecordingDataHolder = new TimeRecordingDataHolder(this, _client);
+            ChannelHolder = new ChannelHolder(this, _client, factory);
+            TagHolder = new TagHolder(this, _client, factory);
+            EpgEventHolder = new EpgEventHolder(this, _client, factory);
+            AutoRecordingDataHolder = new AutoRecordingDataHolder(this, _client, factory);
+            DvrEntryDataHolder = new DvrEntryDataHolder(this, _client, factory);
+            TimeRecordingDataHolder = new TimeRecordingDataHolder(this, _client, factory);
             InitActions();
         }
 
